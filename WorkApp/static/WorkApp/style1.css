@@ -1,0 +1,30 @@
+.nav {
+  background-color: white;
+  color: blue;
+  border-radius: 10px;
+  height: 20px;
+  padding: 10px;
+  font-family: Helvetica;
+}
+
+body {
+  background: linear-gradient(#05FBFF, #1E00FF) fixed;
+}
+
+.maintext {
+  color: white;
+  font-size: 18px;
+}
+
+.form {
+  padding: 10px;
+  border-color: white;
+  background-color: white;
+  border-radius: 10px;
+  width: 190px;
+}
+
+.page1_body {
+  color: white;
+}
+/*# sourceMappingURL=style1.css.map */
