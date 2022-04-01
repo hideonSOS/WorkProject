@@ -7,3 +7,8 @@ class test_database1(models.Model):
     str_area2 = models.CharField(max_length=100)
     date_field=models.DateField()
 
+class test_database2(models.Model):
+    idon = models.AutoField(primary_key=True)
+    str_areaon1 = models.CharField(max_length=10)
+    str_areaon2 = models.CharField(max_length=100)
+    date_fieldon=models.DateField()
