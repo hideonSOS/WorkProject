@@ -1,0 +1,8 @@
+{% extends 'WorkApp/template.html' %}
+{% block body_content %}
+
+    {% for i in database1 %}
+        {{ i.date_field }}
+    {% endfor %}
+
+{% endblock %}
