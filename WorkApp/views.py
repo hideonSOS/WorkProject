@@ -16,4 +16,6 @@ def input(request):
 def return_database1(request):
     database1=test_database1.objects.all()
     return render(request, 'WorkApp/output.html', {'database1':database1})
-    
+
+
+#test
