@@ -18,4 +18,4 @@ class Series(models.Model):
     title = models.CharField(max_length=30)
     Syusai = models.CharField(max_length=5)
     start_day=models.DateField()
-    end_day=models.DasteField()
+    end_day=models.DasteField()    end_day=models.DasteField()    end_day=models.DasteField()    end_day=models.DateField()
