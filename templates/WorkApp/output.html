@@ -1,8 +1,10 @@
 {% extends 'WorkApp/template.html' %}
 {% block body_content %}
 
-    {% for i in database1 %}
-        {{ i.date_field }}
+    {% for i in database %}
+        <p>{{ i.Series }}</p>
     {% endfor %}
+    <p>------------------------</p>
 
+<p>{{ database.Series.0 }}</p>
 {% endblock %}

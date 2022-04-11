@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from .forms import InputForm
-from .models import test_database1
+from .models import Series, test_database1
 
 
 def home(request):
@@ -15,7 +15,12 @@ def input(request):
 
 def return_database1(request):
     database1=test_database1.objects.all()
-    return render(request, 'WorkApp/output.html', {'database1':database1})
+    Serieson = Series.objects.all()
+    database = {
+        'database1':database1,
+        'Series':Serieson
+    }
+    return render(request, 'WorkApp/output.html', {'database':database})
 
 
 #test
