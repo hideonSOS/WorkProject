@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from .forms import InputForm
 from .models import Series, test_database1
+from django.contrib.auth.views import LoginView,LogoutView
 
 
 def home(request):
@@ -23,4 +24,6 @@ def return_database1(request):
     return render(request, 'WorkApp/output.html', {'database':database})
 
 
-#test
+
+class Logout(LogoutView):
+    template_name='WorkApp/logout.html'
