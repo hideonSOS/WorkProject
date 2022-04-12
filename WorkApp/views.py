@@ -10,7 +10,7 @@ def home(request):
 def page1(request):
     return render(request, 'WorkApp/page1.html')
 
-def input_form(request):
+def input(request):
     #form = InputForm()
     #return render(request, 'mlapp/input_form.html', {'form':form})
 
