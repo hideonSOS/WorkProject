@@ -1,5 +1,5 @@
 from django import forms # Djangoが準備しているforms
-from .models import test_database1 # モデルの部分で定義したDBのテーブル
+from .models import Series, test_database1# モデルの部分で定義したDBのテーブル
 
 class InputForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
@@ -8,5 +8,5 @@ class InputForm(forms.ModelForm):
             field.widget.attrs["class"] = "form-control"
     # DBの内容のメタ情報を記載しています
     class Meta:
-        model = test_database1
-        exclude = ['id', 'str_aria1', 'str_aria2', 'date_field']
+        model = Series
+        fields = ['id', 'title', 'Syusai', 'start_day', 'end_day']
