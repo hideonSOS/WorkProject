@@ -17,32 +17,32 @@
 
 </head>
 <body>
-    <nav class="nav">&emsp;業務アプリ
-        <div id="wrapper">
-            <p class ="btn-gnavi">
-            <span>test</span>
-            <span>test</span>
-            <span>test</span>
-            </p>
-        </nav>
-        <nav id="global-navi">
-            <ul class="menu">     
-                <li><a href="/page1">page1</a></li>
-                <li><a href="/output">output</a></li>
-                <li><a href="/input">input</a></li>
-                <li><a href="/page4">page4</a></li>
-                <li>
-                {% if user.is_authenticated %}
-                    <span style="font-size:15px; text-align: right; width: 300px;">
-                        <a href="{% url 'logout' %}" style="color:red; text-decoration: underline;">
-                        ログイン中
-                        </a>
-                    </span>
-                {% endif %}
-                </li>
-            </ul>
-        </nav>
-    </div>
+    
+<div id="wrapper">
+    <p class ="btn-gnavi">
+    <span>test</span>
+    <span>test</span>
+    <span>test</span>
+    </p>
+
+    <nav id="global-navi">
+        <ul class="menu">     
+            <li><a href="/page1">page1</a></li>
+            <li><a href="/output">output</a></li>
+            <li><a href="/input">input</a></li>
+            <li><a href="/page4">page4</a></li>
+            <li>
+            {% if user.is_authenticated %}
+                <span style="font-size:15px; text-align: right; width: 300px;">
+                    <a href="{% url 'logout' %}" style="color:red; text-decoration: underline;">
+                    ログイン中
+                    </a>
+            </li>
+                </span>
+            {% endif %}
+        </ul>
+    </nav>
+</div>
 
     {% block body_content %}
         
