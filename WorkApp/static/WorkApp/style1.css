@@ -43,6 +43,15 @@ body {
     box-sizing: border-box;
     z-index: 2;
   }
+  #wrapper nav ul li {
+    display:block;
+    padding: 20px 28px
+}
+
+#wrapper nav ul li a {
+    text-decoration: none;
+    color: rgb(255,0,0)
+}
   #wrapper .btn-gnavi {
     position: fixed;
     top: 20px;
