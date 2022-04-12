@@ -43,7 +43,7 @@ body {
     box-sizing: border-box;
     z-index: 2;
   }
-  #wrapper nav ul li {
+  #wrapper navi ul li {
     display: block;
     padding: 20px 28px;
   }
