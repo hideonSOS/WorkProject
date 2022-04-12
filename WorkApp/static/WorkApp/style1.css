@@ -31,87 +31,70 @@ body {
 }
 
 @media screen and (max-width: 600px) {
-#wrapper nav {
-  position: fixed;
-  top: 0;
-  right: -300px;
-  width: 150px;
-  height: 100%;
-  padding-top: 50px;
-  background: rgba(255, 0, 0, 0.3);
-  font-size: 20px;
-  box-sizing: border-box;
-  z-index: 2;
-}
-#wrapper nav ul li {
-  display:block;
-  padding: 20px 28px
-}
-
-#wrapper nav ul li a {
-  text-decoration: none;
-  color: rgb(255,0,0)
-}
-#wrapper .btn-gnavi {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  width: 30px;
-  height: 24px;
-  z-index: 3;
-  box-sizing: border-box;
-  cursor: pointer;
-  -webkit-transition: all 400ms;
-  transition: all 400ms;
-}
-
-#wrapper .btn-gnavi span {
-  position: absolute;
-  width: 30px;
-  height: 4px;
-  background: rgba(255, 0, 0, 0.5);
-  border-radius: 10px;
-  -webkit-transition: all 400ms;
-  transition: all 400ms;
-}
-#wrapper .btn-gnavi span:nth-child(1) {
-  top: 10;
-}
-#wrapper .btn-gnavi span:nth-child(2) {
-  top: 20px;
-}
-#wrapper .btn-gnavi span:nth-child(3) {
-  top: 20px;
-}
-#wrapper .btn-gnavi.open {
-  -webkit-transform: rotate(180deg);
-  transform: rotate(180deg);
-}
-#wrapper .btn-gnavi.open span {
-  background: #fff;
-}
-#wrapper .btn-gnavi.open span {
-  width: 24px;
-}
-#wrapper .contents section p {
-  position: absolute;
-  top: 50%;
-  width: 30%;
-  line-height: 1.4;
-  font-size: 20px;
-  color: #fff;
-  text-shadow: 0 0 6px #666;
-}
-#wrapper .contents section:nth-child(odd) p {
-  left: 10%;
-}
-#wrapper .contents section:nth-child(even) p {
-  right: 10%;
-}
-}
-
-.test {
-  background-color: aqua;
+  #wrapper nav {
+    position: fixed;
+    top: 0;
+    right: -300px;
+    width: 150px;
+    height: 100%;
+    padding-top: 50px;
+    background: rgba(255, 0, 0, 0.3);
+    font-size: 20px;
+    box-sizing: border-box;
+    z-index: 2;
+  }
+  #wrapper .btn-gnavi {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 30px;
+    height: 24px;
+    z-index: 3;
+    box-sizing: border-box;
+    cursor: pointer;
+    transition: all 400ms;
+  }
+  #wrapper .btn-gnavi span {
+    position: absolute;
+    width: 30px;
+    height: 4px;
+    background: rgba(255, 0, 0, 0.5);
+    border-radius: 10px;
+    transition: all 400ms;
+  }
+  #wrapper .btn-gnavi span:nth-child(1) {
+    top: 0;
+  }
+  #wrapper .btn-gnavi span:nth-child(2) {
+    top: 10px;
+  }
+  #wrapper .btn-gnavi span:nth-child(3) {
+    top: 20px;
+  }
+  #wrapper .btn-gnavi.open {
+    transform: rotate(180deg);
+  }
+  #wrapper .btn-gnavi.open span {
+    background: #fff;
+  }
+  #wrapper .btn-gnavi.open span {
+    width: 24px;
+  }
+  #wrapper .contents section p {
+    position: absolute;
+    top: 50%;
+    width: 30%;
+    line-height: 1.4;
+    font-size: 20px;
+    color: #fff;
+    text-shadow: 0 0 6px #666;
+  }
+  #wrapper .contents section:nth-child(odd) p {
+    left: 10%;
+  }
+  #wrapper .contents section:nth-child(even) p {
+    right: 10%;
+  }
 }
 
 #ex_chart {
@@ -131,21 +114,4 @@ body {
   height: 400px;
   overflow: hidden;
 }
-/* 
-.maintext {
-  color: white;
-  font-size: 18px;
-}
-
-.form {
-  padding: 10px;
-  border-color: white;
-  background-color: white;
-  border-radius: 10px;
-  width: 190px;
-}
-
-.page1_body {
-  color: white;
-} */
 /*# sourceMappingURL=style1.css.map */
