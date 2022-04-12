@@ -8,6 +8,7 @@
     font-family: Helvetica;
     
 }
+
 body{
     background-color: rgb(30,30,30);
     color:white;
@@ -21,11 +22,13 @@ body{
     right: 0px;
     width: 100%;
 }
+
 #wrapper nav ul li{
 display:inline-block;
 font-size: 16px;
 padding:  10px 10px 10px 10spx;
 }
+
 #wrapper nav ul li a{
 color: #ddd
 }
@@ -44,15 +47,15 @@ color: #ddd
     z-index: 2
 }
 
-// #wrapper nav ul li {
-//     display:block;
-//     padding: 20px 28px
-// }
+#wrapper nav ul li {
+    display:block;
+    padding: 20px 28px
+}
 
-// #wrapper nav ul li a {
-//     text-decoration: none;
-//     color: rgb(255,0,0)
-// }
+#wrapper nav ul li a {
+    text-decoration: none;
+    color: rgb(255,0,0)
+}
 
 #wrapper .btn-gnavi {
     position: fixed;

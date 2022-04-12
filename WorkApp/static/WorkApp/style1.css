@@ -44,14 +44,13 @@ body {
     z-index: 2;
   }
   #wrapper nav ul li {
-    display:block;
-    padding: 20px 28px
-}
-
-#wrapper nav ul li a {
+    display: block;
+    padding: 20px 28px;
+  }
+  #wrapper nav ul li a {
     text-decoration: none;
-    color: rgb(255,0,0)
-}
+    color: red;
+  }
   #wrapper .btn-gnavi {
     position: fixed;
     top: 20px;
