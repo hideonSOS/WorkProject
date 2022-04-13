@@ -60,6 +60,7 @@ body {
     z-index: 3;
     box-sizing: border-box;
     cursor: pointer;
+    -webkit-transition: all 400ms;
     transition: all 400ms;
   }
   #wrapper .btn-gnavi span {
@@ -68,6 +69,7 @@ body {
     height: 4px;
     background: rgba(255, 0, 0, 0.5);
     border-radius: 10px;
+    -webkit-transition: all 400ms;
     transition: all 400ms;
   }
   #wrapper .btn-gnavi span:nth-child(1) {
@@ -80,6 +82,7 @@ body {
     top: 20px;
   }
   #wrapper .btn-gnavi.open {
+    -webkit-transform: rotate(180deg);
     transform: rotate(180deg);
   }
   #wrapper .btn-gnavi.open span {
