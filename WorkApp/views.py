@@ -10,6 +10,15 @@ def home(request):
 def page1(request):
     return render(request, 'WorkApp/page1.html')
 
+def page2(request):
+    return render(request, 'WorkApp/page2.html')
+
+def page3(request):
+    return render(request, 'WorkApp/page3.html')
+
+def page4(request):
+    return render(request, 'WorkApp/page4.html')
+
 def input(request):
     #form = InputForm()
     #return render(request, 'mlapp/input_form.html', {'form':form})
