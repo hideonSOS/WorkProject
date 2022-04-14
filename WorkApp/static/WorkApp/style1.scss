@@ -113,6 +113,11 @@ body{
     #wrapper .contents section:nth-child(even) p {
         right: 10%
     }
+    
+    #calendar {
+        width: 100%;
+        height:500px;
+    }
 }
 
 
@@ -121,6 +126,12 @@ body{
 @media only screen and ( max-width:419px ){
     iframe{
         width:100%;
+        height: 200px;
+    }
+    
+    #calendar {
+        width: 100%;
+        height:500px;
     }
 }
 

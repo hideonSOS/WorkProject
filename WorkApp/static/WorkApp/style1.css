@@ -5,7 +5,7 @@ body {
 
 #calendar {
   width: 100%;
-  height: 700px;
+  height: 1000px;
 }
 
 #global-navi {
@@ -101,9 +101,8 @@ body {
   }
   #calendar {
     width: 100%;
-    height: 1000px;
+    height: 500px;
   }
-  
 }
 
 #ex_chart {
@@ -114,10 +113,11 @@ body {
 @media only screen and (max-width: 419px) {
   iframe {
     width: 100%;
+    height: 200px;
   }
   #calendar {
     width: 100%;
-    height: 1000px;
+    height: 500px;
   }
 }
 
