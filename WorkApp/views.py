@@ -31,9 +31,12 @@ def input(request):
     else:
         form = InputForm()
         return render(request, 'WorkApp/input.html', {'form':form})
-        
+import pandas as pd
+from django_pandas.io import read_frame      
 def return_database1(request):
     database1=test_database1.objects.all()
+    df = read_frame(database1)
+    print(df)
     Serieson = Series.objects.all()
     database = {
         'database1':database1,

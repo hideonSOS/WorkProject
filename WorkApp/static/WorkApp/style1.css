@@ -3,6 +3,11 @@ body {
   color: white;
 }
 
+#calendar {
+  width: 100%;
+  height: 1000px;
+}
+
 #global-navi {
   background: #ff6464;
   position: fixed;
