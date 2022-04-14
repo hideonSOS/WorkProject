@@ -16,12 +16,17 @@
   <form method="POST" class="register-form ">{% csrf_token %}
     <div class="row" style="margin-top:30px;">
       <div class="range col-lg-6 offset-md-3">
-        {{ form }}
+        <input type="text" class="id">
+        <input type="text" class="series">
+        <input type="text" class="syusai">
+        <input type="date" class="start_day">
+        <input type="date" class="end_day">
+        <input type="text" class="price">
       </div>
     </div>
   
   <!-- 送信（保存）ボタン-->
-    <button type="submit" class="save btn btn-primary offset-md-3" style="margin-top: 30px;">Save</button>
+    <button type="submit" class="save btn btn-danger offset-md-3" style="margin-top: 30px;">入力</button>
   </form>
 
 {% endblock %}
