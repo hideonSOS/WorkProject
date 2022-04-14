@@ -115,8 +115,12 @@ body{
     }
     
     #calendar {
+        position: relative;
         width: 100%;
         height:100px;
+    }
+    .testa{
+        background-color: red;
     }
 }
 
@@ -130,9 +134,14 @@ body{
     }
     
     #calendar {
+        position: relative;
         width: 100%;
         height:100px;
     }
+    .testa{
+        background-color: aqua;
+    }
+
 }
 
 .canvas{
