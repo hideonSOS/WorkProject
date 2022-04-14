@@ -54,7 +54,7 @@ def input(request):
     end_day = request.POST.get('end_day')
     price = request.POST.get('price')
     input_database(id,series,syusai,start_day,end_day,price)
-    return render(request,'WorkApp/output.html')
+    return render(request,'WorkApp/input.html')
 
 
 def output(request):
