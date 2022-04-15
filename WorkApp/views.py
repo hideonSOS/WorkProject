@@ -16,8 +16,10 @@ def page2(request):
 
 def page3(request):
     df = print_database()
-    print(df)
-    return render(request, 'WorkApp/page3.html')
+    dict={
+        'series':[i for i in df['series']]
+    }
+    return render(request, 'WorkApp/page3.html',{'dict':dict})
 
 def page4(request):
     return render(request, 'WorkApp/page4.html')
