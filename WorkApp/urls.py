@@ -11,5 +11,5 @@ urlpatterns=[
     path('input/', views.input, name='input'),
     path('output/', views.output, name='output'),
     path('logout/', views.Logout.as_view(), name = 'logout'),
-    
+    path('delete/' ,views.delete,name='delete'),
 ]

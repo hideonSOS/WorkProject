@@ -54,8 +54,8 @@ def input(request):
     end_day = request.POST.get('end_day')
     price = request.POST.get('price')
     if request.method=='POST':
-        # input_database(id,series,syusai,start_day,end_day,price)
-        delete_database(id)
+        input_database(id,series,syusai,start_day,end_day,price)
+        # delete_database(id)
     
     return render(request,'WorkApp/input.html')
 
@@ -67,3 +67,9 @@ def output(request):
 
 class Logout(LogoutView):
     template_name='WorkApp/logout.html'
+
+def delete(request):
+    id = request.POST.get('id')
+    if request.method=='POST':
+        delete_database(id)
+    return render(request, 'WorkApp/delete.html')
