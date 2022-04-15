@@ -1,4 +1,6 @@
 {% extends 'WorkApp/template.html' %}
 {% block body_content %}
-{{ dict.series }}
+{% for i in dict.series %}
+    {{ i }}
+{% endfor %}
 {% endblock %}
