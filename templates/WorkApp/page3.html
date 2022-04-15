@@ -18,6 +18,13 @@
         </td>
     {% endfor %}
     </tr>
+    <tr>
+    {% for i in dict.items %}
+    <td>
+        {{ i.2 }}
+    </td>
+    {% endfor %}    
+    </tr>
 </table>
 <style>
     .test{
