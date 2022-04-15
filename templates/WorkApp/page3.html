@@ -7,11 +7,11 @@
 
     {% for key,value in dict.items %}
         {% comment %} <th>{{ key }}</th>      {% endcomment %}
-        {% for i in value %}
         <th>
-            <td>{{ i }}</td>
+            {% for i in value %}
+                <td>{{ i }}</td>
+            {% endfor %}
         </th>
-        {% endfor %}
     {% endfor %}
 </table>
 <style>
