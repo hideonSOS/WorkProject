@@ -8,8 +8,9 @@
         {% endfor %}
     </tr>
     <tr>
-        {% for i in dict %}
-            <td>{{ i.id }}</td>
+        {% for i, a in dict.id, dict.title %}
+            <td>{{ i }}</td>
+            <td>{{ a }}</td>
         {% endfor %}
     </tr>
     
