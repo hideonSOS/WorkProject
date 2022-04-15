@@ -17,7 +17,7 @@ def page2(request):
 def page3(request):
     df = print_database()
     dict={
-        'series':[i for i in df['series']]
+        'series':[i for i in df['title']]
     }
     return render(request, 'WorkApp/page3.html',{'dict':dict})
 
