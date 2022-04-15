@@ -14,9 +14,9 @@ def input_database(id,series,syusai,start_day,end_day,price):
     SQL = f"INSERT INTO r4table VALUES({id}, '{series}', '{syusai}', '{start_day}', '{end_day}', {price})" 
     cursor.execute(SQL) 
     connection.commit()
+    # df = pd.read_sql(sql='SELECT * FROM r4table;',con=connection) 
+    # print(df)
     connection.close()
-    df = pd.read_sql(sql='SELECT * FROM r4table;',con=connection) 
-    print(df)
 
 def delete_database(id): 
     connection_config = { 
@@ -31,6 +31,6 @@ def delete_database(id):
     SQL = f"DELETE FROM r4table WHERE id = {id}" 
     cursor.execute(SQL) 
     connection.commit()
+    # df = pd.read_sql(sql='SELECT * FROM r4table;',con=connection) 
+    # print(df)
     connection.close()
-    df = pd.read_sql(sql='SELECT * FROM r4table;',con=connection) 
-    print(df)
