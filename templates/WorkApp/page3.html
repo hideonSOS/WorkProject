@@ -1,7 +1,7 @@
 {% extends 'WorkApp/template.html' %}
 {% block body_content %}
 <p>test</p>
-<table style='table-layout:fixed;'>
+<table>
     <tr>
         {% for i in dict.col %}
             <th>{{ i }}</th>
@@ -9,9 +9,13 @@
     </tr>
     <tr>
         {% for i in dict %}
-            <td>{{ i.0 }}</td>
+            <td>{{ i }}</td>
         {% endfor %}
-        
+    </tr>
+    <tr>
+        {% for i in title %}
+            <td>{{ i }}</td>
+        {% endfor %}
     </tr>
 </table>
 
