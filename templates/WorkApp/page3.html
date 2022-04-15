@@ -2,6 +2,7 @@
 {% block body_content %}
 <p>test</p>
 
+
 <table class='test'>
 
     {% for value in dict.items %}
@@ -17,7 +18,10 @@
 </table>
 <style>
     .test{
-        border-color:white;
+        border-collapse: collapse;
+    }
+    .test td{
+        border: 2px solid #ff7500;
     }
 </style>
 
