@@ -34,7 +34,7 @@ def delete_database(id):
 
     connection.close()
 
-def print_database(id): 
+def print_database(): 
     connection_config = { 
         'host': 'localhost', 
         'port': '5432', 
