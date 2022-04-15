@@ -6,7 +6,7 @@
 <table class='test'>
     <tr>
     {% for i in dict.items %}
-        {% for a in i %}
+        {% for a in i.0 %}
             <th>{{ a }}</th>
         {% endfor %}
     {% endfor %}
