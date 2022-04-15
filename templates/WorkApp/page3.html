@@ -6,11 +6,8 @@
 <table class='test'>
     <tr>
     {% for i in dict.items %}
-        <th>
-            {{ i.0 }}
-        </th>
         {% for a in i %}
-            <td>{{ a }}</td>
+            <th>{{ a }}</th>
         {% endfor %}
     {% endfor %}
     </tr>
