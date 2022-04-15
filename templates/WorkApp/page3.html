@@ -1,17 +1,7 @@
 {% extends 'WorkApp/template.html' %}
 {% block body_content %}
 <p>test</p>
-{% for i in dict.id %}
-<table>
-    <thead>
-        <tr><th>見出し</th></tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>{{ i }}</td>
-        </tr>
-</tbody>
-</table>
+{{ dict|safe }}
 {% endfor %}
 
 {% endblock %}
