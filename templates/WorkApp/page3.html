@@ -7,11 +7,11 @@
 
     {% for key,value in dict.items %}
         <th>{{ key }}</th>     
-    
-        {% for i in value %}
-            <td>{{ i }}</td>
-        {% endfor %}
-        
+        <th>
+            {% for i in value %}
+                <td>{{ i }}</td>
+            {% endfor %}
+        </th>
     {% endfor %}
 </table>
 <style>
@@ -19,6 +19,9 @@
         border-collapse: collapse;
     }
     .test td{
+        border: 1px solid #ff7500;
+    }
+    .test th{
         border: 1px solid #ff7500;
     }
 </style>
