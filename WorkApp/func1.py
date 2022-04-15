@@ -28,7 +28,7 @@ def delete_database(id):
     } 
     connection = psycopg2.connect(**connection_config) 
     cursor=connection.cursor() 
-    SQL = f"DELETE FROM * WHERE id = {id}" 
+    SQL = f"DELETE FROM r4table WHERE id = {id}" 
     cursor.execute(SQL) 
     connection.commit()
     connection.close()
