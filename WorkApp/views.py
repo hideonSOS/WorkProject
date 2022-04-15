@@ -17,6 +17,7 @@ def page2(request):
 def page3(request):
     df = print_database()
     dict={
+        'col':[i for i in df.columns],
         'id':[i for i in df['id']],
         'title':[i for i in df['title']],
         'syusai':[i for i in df['syusai']],
