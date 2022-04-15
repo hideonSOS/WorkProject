@@ -4,19 +4,18 @@
 
 
 <table class='test'>
-
-    {% for i in dict.items %}
     <tr>
+    {% for i in dict.items %}
         <th>
             {{ i.0 }}
         </th>
-    </tr>
+    {% endfor %}
+    {% for i in dict.items %}
         <td>
             {{ i.1 }}
         </td>
-
     {% endfor %}
-
+    </tr>
 </table>
 <style>
     .test{
