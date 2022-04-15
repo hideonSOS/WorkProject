@@ -5,7 +5,7 @@
 
 <table class='test'>
 
-    {% for value in dict.items %}
+    {% for key,value in dict.items %}
 
     <tr>
         <th>{{ value.0.0 }}</th>
@@ -21,7 +21,7 @@
         border-collapse: collapse;
     }
     .test td{
-        border: 2px solid #ff7500;
+        border: 1px solid #ff7500;
     }
 </style>
 
