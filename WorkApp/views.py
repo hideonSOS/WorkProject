@@ -2,7 +2,7 @@ from django.shortcuts import render,redirect
 from .forms import InputForm
 from .models import Series, test_database1
 from django.contrib.auth.views import LoginView,LogoutView
-from .func1 import delete_database, input_database
+from .func1 import delete_database, input_database, print_database
 
 
 def home(request):
@@ -15,6 +15,8 @@ def page2(request):
     return render(request, 'WorkApp/page2.html')
 
 def page3(request):
+    df = print_database()
+    print(df)
     return render(request, 'WorkApp/page3.html')
 
 def page4(request):

@@ -31,6 +31,20 @@ def delete_database(id):
     SQL = f"DELETE FROM r4table WHERE id = {id}" 
     cursor.execute(SQL) 
     connection.commit()
-    # df = pd.read_sql(sql='SELECT * FROM r4table;',con=connection) 
-    # print(df)
+
     connection.close()
+
+def print_database(id): 
+    connection_config = { 
+        'host': 'localhost', 
+        'port': '5432', 
+        'database': 'postgres', 
+        'user': 'postgres', 
+        'password': 'p@ssword' 
+    } 
+    connection = psycopg2.connect(**connection_config) 
+    cursor=connection.cursor() 
+    df = pd.read_sql(sql='SELECT * FROM r4table;',con=connection) 
+    connection.commit()
+    connection.close()
+    return df
