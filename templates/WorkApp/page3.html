@@ -4,14 +4,13 @@
 <table>
 
     {% for value in dict.items %}
+
     <tr>
         <th>{{ value.0 }}</th>
-    </tr>
-    <tr>
-        <td>{{ value.0 }}</td>
         <td>{{ value.1 }}</td>
         <td>{{ value.2 }}</td>
         <td>{{ value.3 }}</td>
+        <td>{{ value.4 }}</td>
     </tr>
     {% endfor %}
 </table>
