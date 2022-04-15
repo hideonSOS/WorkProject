@@ -3,9 +3,9 @@
 <p>test</p>
 <table>
 
-    {% for key, value in dict.items %}
+    {% for value in dict.items %}
     <tr>
-        <th>{{ key }}</th>
+        <th>{{ value.0 }}</th>
     </tr>
     <tr>
         <td>{{ value.0 }}</td>
