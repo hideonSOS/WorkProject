@@ -3,9 +3,14 @@
 <p>test</p>
 {% for i in dict.title %}
 <table>
-<tr>
-    <th>{{ i }}</th>
-</tr>
+    <thead>
+        <tr><th>見出し</th></tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>{{ i }}</td>
+        </tr>
+</tbody>
 </table>
 {% endfor %}
 
