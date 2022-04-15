@@ -7,12 +7,11 @@
             <th>{{ i }}</th>
         {% endfor %}
     </tr>
+    {% for i in dict.id %}
     <tr>
-        {% for i in dict.0 %}
-            <td>{{ i }}</td>
-        {% endfor %}
+        <td>{{ i }}</td>
     </tr>
-    
+    {% endfor %}
 </table>
 
 
