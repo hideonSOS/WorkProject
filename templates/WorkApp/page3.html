@@ -2,7 +2,9 @@
 {% block body_content %}
 <p>test</p>
 {% for i in dict %}
-    {{ i }}
+    {% for a in i %}
+        {{ i }}
+    {% endfor %}
 {% endfor %}
 
 {% endblock %}
