@@ -2,14 +2,10 @@
 {% block body_content %}
 <p>test</p>
 <table>
-    <tr>
-        {% for i in dict.col %}
-            <th>{{ i }}</th>
-        {% endfor %}
-    </tr>
+
     {% for key, value in dict.items %}
     <tr>
-        <td>{{ key }}</td>
+        <th>{{ key }}</th>
     </tr>
     <tr>
         <td>{{ value.0 }}</td>
