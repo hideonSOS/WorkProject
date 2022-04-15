@@ -6,14 +6,12 @@
 <table class='test'>
 
     {% for key,value in dict.items %}
-        <tr>
-            <th>{{ key }}</th>
-        </tr>       
-        <tr>
-            {% for i in value %}
+        <th>{{ key }}</th>     
+    
+        {% for i in value %}
             <td>{{ i }}</td>
-            {% endfor %}
-        </tr>
+        {% endfor %}
+        
     {% endfor %}
 </table>
 <style>
