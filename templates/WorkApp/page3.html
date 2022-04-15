@@ -5,12 +5,9 @@
 
 <table class='test'>
 
-    {% for key,value in dict.items %}
-        {% comment %} <th>{{ key }}</th>      {% endcomment %}
+    {% for i in dict.col %}
         <th>
-            {% for i in value %}
-                <td>{{ i }}</td>
-            {% endfor %}
+            <td>{{ i }}</td>
         </th>
     {% endfor %}
 </table>
