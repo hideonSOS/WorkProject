@@ -2,7 +2,7 @@ from django.shortcuts import render,redirect
 from .forms import InputForm
 from .models import Series, test_database1
 from django.contrib.auth.views import LoginView,LogoutView
-from .func1 import input_database
+from .func1 import delete_database, input_database
 
 
 def home(request):
@@ -54,8 +54,9 @@ def input(request):
     end_day = request.POST.get('end_day')
     price = request.POST.get('price')
     if request.method=='POST':
-        input_database(id,series,syusai,start_day,end_day,price)
-    print(id)
+        # input_database(id,series,syusai,start_day,end_day,price)
+        delete_database(id)
+    
     return render(request,'WorkApp/input.html')
 
 
