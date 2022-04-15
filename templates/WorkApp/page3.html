@@ -3,12 +3,14 @@
 <p>test</p>
 <table>
     <tr>
-    <th>a</th>
-    <th>b</th>
+        {% for i in dict.id %}
+            <th>{{ i }}</th>
+        {% endfor %}
     </tr>
     <tr>
-        <td>test1</td>
-        <td>test2</td>
+        {% for i in dict.title %}
+            <td>i</td>
+        {% endfor %}
     </tr>
 </table>
 
