@@ -1,10 +1,12 @@
 {% extends 'WorkApp/template.html' %}
 {% block body_content %}
 <p>test</p>
-{% for i in dict %}
-    {% for a in i %}
-        {{ i }}
-    {% endfor %}
+{% for i in dict.title %}
+<table>
+<tr>
+    <th>{{ i }}</th>
+</tr>
+</table>
 {% endfor %}
 
 {% endblock %}
