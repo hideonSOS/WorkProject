@@ -16,15 +16,9 @@ def page2(request):
 
 def page3(request):
     df = print_database()
-    dict={
-        'col':[i for i in df.columns],
-        'id':[i for i in df['id']],
-        'title':[i for i in df['title']],
-        'syusai':[i for i in df['syusai']],
-        'start_day':[i for i in df['start_day']],
-        'price':[i for i in df['price']],
-    }
-    return render(request, 'WorkApp/page3.html',{'dict':dict})
+    dict = df.to_dict('records')
+    print(dict)
+    # return render(request, 'WorkApp/page3.html',{'dict':dict})
 
 def page4(request):
     return render(request, 'WorkApp/page4.html')
