@@ -53,17 +53,17 @@ def seiri_database():
     df = print_database()
     df['end_day'] = pd.to_datetime(df['end_day'],format='%Y-%m-%d')
     dict={
-    '４月':df1.loc[df1['end_day'].dt.month==4]['price'].sum(),
-    '５月':df1.loc[df1['end_day'].dt.month==5]['price'].sum(),
-    '６月':df1.loc[df1['end_day'].dt.month==6]['price'].sum(),
-    '７月':df1.loc[df1['end_day'].dt.month==7]['price'].sum(),
-    '８月':df1.loc[df1['end_day'].dt.month==8]['price'].sum(),
-    '９月':df1.loc[df1['end_day'].dt.month==9]['price'].sum(),
-    '１０月':df1.loc[df1['end_day'].dt.month==10]['price'].sum(),
-    '１１月':df1.loc[df1['end_day'].dt.month==11]['price'].sum(),
-    '１２月':df1.loc[df1['end_day'].dt.month==12]['price'].sum(),
-    '１月':df1.loc[df1['end_day'].dt.month==1]['price'].sum(),
-    '２月':df1.loc[df1['end_day'].dt.month==2]['price'].sum(),
-    '３月':df1.loc[df1['end_day'].dt.month==3]['price'].sum(),
+    '４月':df.loc[df['end_day'].dt.month==4]['price'].sum(),
+    '５月':df.loc[df['end_day'].dt.month==5]['price'].sum(),
+    '６月':df.loc[df['end_day'].dt.month==6]['price'].sum(),
+    '７月':df.loc[df['end_day'].dt.month==7]['price'].sum(),
+    '８月':df.loc[df['end_day'].dt.month==8]['price'].sum(),
+    '９月':df.loc[df['end_day'].dt.month==9]['price'].sum(),
+    '１０月':df.loc[df['end_day'].dt.month==10]['price'].sum(),
+    '１１月':df.loc[df['end_day'].dt.month==11]['price'].sum(),
+    '１２月':df.loc[df['end_day'].dt.month==12]['price'].sum(),
+    '１月':df.loc[df['end_day'].dt.month==1]['price'].sum(),
+    '２月':df.loc[df['end_day'].dt.month==2]['price'].sum(),
+    '３月':df.loc[df['end_day'].dt.month==3]['price'].sum(),
 }
     return dict
