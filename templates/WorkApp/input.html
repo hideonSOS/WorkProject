@@ -23,23 +23,23 @@
 </table>
 <div style="margin-top: 20px;">
   <div class="card" style="border-radius: 15px;">
-    <h2>入力画面</h2>
-  
-    <form method="POST" class="register-form ">{% csrf_token %}
-      <div class="row" style="margin-top:30px;">
-        {% comment %} <div class="range col-sm"> {% endcomment %}
-          <input type="text" name="id">
-          <input type="text" name="series">
-          <input type="text" name="syusai">
-          <input type="date" name="start_day">
-          <input type="date" name="end_day">
-          <input type="text" name="price">
-        {% comment %} </div> {% endcomment %}
-      </div>
-    
-    <!-- 送信（保存）ボタン-->
-      <button type="submit" class="save btn btn-danger" style="margin-top: 30px;">入力</button>
-    </form>
+    <div style='margin:20px;'> 
+      <form method="POST" class="register-form ">{% csrf_token %}
+        <div class="row" style="margin-top:30px;">
+          {% comment %} <div class="range col-sm"> {% endcomment %}
+            <input type="text" name="id">
+            <input type="text" name="series">
+            <input type="text" name="syusai">
+            <input type="date" name="start_day">
+            <input type="date" name="end_day">
+            <input type="text" name="price">
+          {% comment %} </div> {% endcomment %}
+        </div>
+      
+      <!-- 送信（保存）ボタン-->
+        <button type="submit" class="save btn btn-danger" style="margin-top: 30px;">入力</button>
+      </form>
+    </div>
   </div>
 </div>
 {% endblock %}
