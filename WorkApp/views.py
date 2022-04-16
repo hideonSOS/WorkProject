@@ -12,9 +12,7 @@ def page1(request):
     return render(request, 'WorkApp/page1.html')
 
 def page2(request):
-    df = seiri_database()
-    print(df)
-    dict = df.to_dict('records')
+    dict = seiri_database()
     return render(request, 'WorkApp/page2.html', {'dict':dict})
 
 def page3(request):
