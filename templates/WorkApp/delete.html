@@ -10,11 +10,8 @@
 </div>
 <table class='tb'>
   {% for i in dict.0 %}
-  
       <th>{{ i }}</th>
-  
   {% endfor %}
-  
   {% for i in dict %}
   <tr>
           <td>{{ i.id }}</td>
@@ -25,12 +22,10 @@
           <td>{{ i.price }}</td>
   </tr>
   {% endfor %} 
-  
-
 </table>
 
 <div style="margin-top: 20px;">
-    <h2>情報入力画面</h2>
+    <h2>削除画面</h2>
   </div>
   <form method="POST" class="register-form ">{% csrf_token %}
     <div class="row" style="margin-top:30px;">
