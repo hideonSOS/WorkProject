@@ -17,8 +17,8 @@ def page2(request):
 def page3(request):
     df = print_database()
     dict = df.to_dict('records')
-    print(dict)
-    # return render(request, 'WorkApp/page3.html',{'dict':dict})
+    
+    return render(request, 'WorkApp/page3.html',{'dict':dict})
 
 def page4(request):
     return render(request, 'WorkApp/page4.html')
