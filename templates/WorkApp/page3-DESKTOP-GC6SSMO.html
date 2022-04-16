@@ -5,16 +5,16 @@
 
 <table class='test'>
     
-    {% for i in dict %}
+    {% for i in dict.items %}
     <tr>
-        
-            <td>{{ i.id }}</td>
-            <td>{{ i.series }}</td>
-            <td>{{ i.syusai }}</td>
+    {% for a in i.1 %}
+        <th>{{ a }}</th>
+    {% endfor %}
     </tr>
-    {% endfor %} 
+        
+    {% endfor %}
     
- 
+    
 </table>
 <style>
     .test{
