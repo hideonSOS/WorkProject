@@ -77,5 +77,6 @@ def delete(request):
     id = request.POST.get('id')
     if request.method=='POST':
         delete_database(id)
-        
+        df = print_database()
+        dict = df.to_dict('records')
     return render(request, 'WorkApp/delete.html',{'dict':dict})
