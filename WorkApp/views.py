@@ -13,6 +13,7 @@ def page1(request):
 
 def page2(request):
     df = seiri_database()
+    print(df)
     dict = df.to_dict('records')
     return render(request, 'WorkApp/page2.html', {'dict':dict})
 
