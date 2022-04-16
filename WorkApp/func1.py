@@ -52,6 +52,7 @@ def print_database():
 def seiri_database():
     df = print_database()
     df['end_day'] = pd.to_datetime(df['end_day'],format='%Y-%m-%d')
+    list = ['４月','５月','６月','７月','８月','９月','１０月','１１月','１２月','１月','２月','３月']
     dict={
     '４月':df.loc[df['end_day'].dt.month==4]['price'].sum(),
     '５月':df.loc[df['end_day'].dt.month==5]['price'].sum(),
@@ -65,6 +66,6 @@ def seiri_database():
     '１月':df.loc[df['end_day'].dt.month==1]['price'].sum(),
     '２月':df.loc[df['end_day'].dt.month==2]['price'].sum(),
     '３月':df.loc[df['end_day'].dt.month==3]['price'].sum(),
-    'monthlist':['４月','５月','６月','７月','８月','９月','１０月','１１月','１２月','１月','２月','３月']
+    'monthlist':[i for i in list]
 }
     return dict
