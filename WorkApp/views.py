@@ -56,11 +56,15 @@ def input(request):
     start_day = request.POST.get('start_day')
     end_day = request.POST.get('end_day')
     price = request.POST.get('price')
+    df = print_database()
+    dict = df.to_dict('records')
     if request.method=='POST':
         input_database(id,series,syusai,start_day,end_day,price)
         # delete_database(id)
+        df = print_database()
+        dict = df.to_dict('records')
     
-    return render(request,'WorkApp/input.html')
+    return render(request,'WorkApp/input.html',{'dict':dict})
 
 
 def output(request):
