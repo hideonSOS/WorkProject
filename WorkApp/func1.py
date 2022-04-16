@@ -51,8 +51,5 @@ def print_database():
 
 def seiri_database():
     df = print_database()
-    df1 = df.reset_index('end_day',drop=True)
-    print(df1)
-    print('df2')
-    df2 = df1.sort_index()
-    print(df2)
+    df['end_day'] = pd.to_datetime(df['end_day'],format='%Y-%m-%d')
+    
