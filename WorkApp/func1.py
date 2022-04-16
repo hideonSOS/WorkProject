@@ -52,4 +52,4 @@ def print_database():
 def seiri_database():
     df = print_database()
     df['end_day'] = pd.to_datetime(df['end_day'],format='%Y-%m-%d')
-    
+    return df
