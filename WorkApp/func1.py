@@ -65,5 +65,6 @@ def seiri_database():
     '１月':df.loc[df['end_day'].dt.month==1]['price'].sum(),
     '２月':df.loc[df['end_day'].dt.month==2]['price'].sum(),
     '３月':df.loc[df['end_day'].dt.month==3]['price'].sum(),
+    'monthlist':['４月','５月','６月','７月','８月','９月','１０月','１１月','１２月','１月','２月','３月']
 }
     return dict
