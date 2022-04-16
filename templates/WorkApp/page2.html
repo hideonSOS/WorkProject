@@ -1,6 +1,9 @@
 {% extends 'WorkApp/template.html' %}
 {% block body_content %}
 
+{% for i in dict.monthlist %}
+    <p>{% i %}</p>
+{% endfor %}
 
 <p>{{ dict.monthlist }}</p>
 <p>{{ dict }}</p>
