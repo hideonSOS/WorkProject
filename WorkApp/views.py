@@ -2,7 +2,7 @@ from django.shortcuts import render,redirect
 from .forms import InputForm
 from .models import Series, test_database1
 from django.contrib.auth.views import LoginView,LogoutView
-from .func1 import delete_database, input_database, print_database
+from .func1 import delete_database, input_database, print_database,seiri_database
 
 
 def home(request):
@@ -12,7 +12,9 @@ def page1(request):
     return render(request, 'WorkApp/page1.html')
 
 def page2(request):
-    return render(request, 'WorkApp/page2.html')
+    df = seiri_database()
+    dict = df.to_dict('records')
+    return render(request, 'WorkApp/page2.html', {'dict':dict})
 
 def page3(request):
     df = print_database()
