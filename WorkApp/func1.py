@@ -48,3 +48,11 @@ def print_database():
     connection.commit()
     connection.close()
     return df
+
+def seiri_database():
+    df = print_database()
+    df1 = df.reset_index('end_day',drop=True)
+    print(df1)
+    print('df2')
+    df2 = df1.sort_index()
+    print(df2)

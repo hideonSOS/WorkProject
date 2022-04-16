@@ -1,6 +1,10 @@
 {% extends 'WorkApp/template.html' %}
 {% block body_content %}
 
+{% for i in dict %}
+{{ i }}
+{% endfor %}
+
 <div class="canvas" style="width:100%">
     <canvas id="canvas"></canvas>
 </div>
