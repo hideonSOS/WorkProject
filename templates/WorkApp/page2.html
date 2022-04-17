@@ -12,7 +12,9 @@ var myChart = new Chart(ctx, {
   type: 'bar',
   data: {
     // labels: [1,2,3,4,5,6,7,8,9,10,11,12],
-    labels:[{{ dict.monthlist }}],
+    {% autoescape off %}
+    labels:{{ dict.monthlist }},
+    {% endautoescape %}
     datasets: [{
       label: 'Red',
       data: [1,2,3,4,5,6,7,8,9,10,11,12],
