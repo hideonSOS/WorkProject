@@ -3,7 +3,7 @@
 
 <p>{{ dict.monthlist }}</p>
 <p>{{ dict }}</p>
-<div style="width:400px">
+<div style="width:1000px">
     <canvas id="mychart-bar"></canvas>
   </div>
 <script>
@@ -20,11 +20,7 @@ var myChart = new Chart(ctx, {
       label: 'Green',
       data: [20, 10, 30],
       backgroundColor: '#484',
-    }, {
-      label: 'Blue',
-      data: [30, 20, 15],
-      backgroundColor: '#48f',
-    }],
+    },],
   },
 });    
 </script>
