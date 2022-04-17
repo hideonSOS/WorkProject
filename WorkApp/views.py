@@ -1,27 +1,32 @@
 from django.shortcuts import render,redirect
-from .forms import InputForm
+from .forms import InputForm, LoginForm
 from .models import Series, test_database1
 from django.contrib.auth.views import LoginView,LogoutView
 from .func1 import delete_database, input_database, print_database,seiri_database
+from django.contrib.auth.decorators import login_required
 
-
+@login_required
 def home(request):
     return render(request, 'WorkApp/home.html')
 
+@login_required
 def page1(request):
     return render(request, 'WorkApp/page1.html')
 
+@login_required
 def page2(request):
     dicton = seiri_database()
     
     return render(request, 'WorkApp/page2.html', {'dict':dicton})
 
+@login_required
 def page3(request):
     df = print_database()
     dict = df.to_dict('records')
     
     return render(request, 'WorkApp/page3.html',{'dict':dict})
 
+@login_required
 def page4(request):
     return render(request, 'WorkApp/page4.html')
 
@@ -51,6 +56,7 @@ def page4(request):
 #         'Series':Serieson
 #     }
 #     return render(request, 'WorkApp/output.html', {'database':database})
+@login_required
 def input(request):
     id = request.POST.get('id')
     series = request.POST.get('series')
@@ -68,7 +74,7 @@ def input(request):
     
     return render(request,'WorkApp/input.html',{'dict':dict})
 
-
+@login_required
 def output(request):
     return render(request, 'WorkApp/output.html')
 
@@ -77,6 +83,12 @@ def output(request):
 class Logout(LogoutView):
     template_name='WorkApp/logout.html'
 
+
+class Login(LoginView):
+    form_class=LoginForm
+    template_name = 'WorkApp/login.html'
+
+@login_required
 def delete(request):
     df = print_database()
     dict = df.to_dict('records')
