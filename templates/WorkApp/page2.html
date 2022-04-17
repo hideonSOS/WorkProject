@@ -3,9 +3,10 @@
 
 <p>{{ dict.monthlist }}</p>
 <p>{{ dict }}</p>
-<div class="canvas" style="width:100%">
-    <canvas id="canvas"></canvas>
-</div>
+<div class="chart-container" style="position: relative; height:10vh; width:98vw">
+        
+    <canvas id="myChart" width="200" height="70"></canvas>
+
 <script>
 var ctx = document.getElementById('mychart-bar');
 var myChart = new Chart(ctx, {
