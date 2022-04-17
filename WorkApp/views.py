@@ -14,7 +14,7 @@ def page1(request):
 def page2(request):
     dicton = seiri_database()
     dict={
-        'monthlist':dicton['monthlist']
+        'monthlist':[i for i in dicton['monthlist']]
     }
     return render(request, 'WorkApp/page2.html', {'dict':dict})
 
