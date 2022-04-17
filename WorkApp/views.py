@@ -13,10 +13,8 @@ def page1(request):
 
 def page2(request):
     dicton = seiri_database()
-    dict={
-        'monthlist':[i for i in dicton['monthlist']]
-    }
-    return render(request, 'WorkApp/page2.html', {'dict':dict})
+    
+    return render(request, 'WorkApp/page2.html', {'dict':dicton})
 
 def page3(request):
     df = print_database()
