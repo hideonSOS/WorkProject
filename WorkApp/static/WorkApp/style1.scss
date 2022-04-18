@@ -11,7 +11,12 @@ td{
 table{
     width:70%;
 }
-
+.register-form{
+    position: fixed;
+    text-align: right;
+    top:0px;
+    z-index: 3;
+}
 
 .canvas{
     position:relative;
