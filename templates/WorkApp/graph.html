@@ -31,7 +31,8 @@ var myChart = new Chart(ctx, {
       {{ dict.two }},
       {{ dict.three }}],
       backgroundColor: 'mediumspringgreen',
-  }, {
+  }, 
+  {
       label: '支払総額',
       data: [{{ dict.four_2 }},
       {{ dict.five_2 }},
@@ -46,39 +47,9 @@ var myChart = new Chart(ctx, {
       {{ dict.two_2 }},
       {{ dict.three_2 }}],
       backgroundColor: '#FF9933',
-    },{% endautoescape %}],
-  },
-  options: {
-        :
-        scales: {         // 軸設定
-            xAxes: [           // Ｘ軸設定
-                {
-                    scaleLabel: {   // 軸ラベル
-                       fontColor :'cyan'
-                    },
-                    gridLines: {    // 目盛線
-                        color:'red'
-                    },
-                    ticks: {        // 目盛り
-                        fontColor:'yellow'
-                    },
-                }
-            ],
-            yAxes: [  
-                {
-                    scaleLabel: {   // 軸ラベル
-                       fontColor :'cyan'
-                    },
-                    gridLines: {    // 目盛線
-                        color:'red'
-                    },
-                    ticks: {        // 目盛り
-                        fontColor:'yellow'
-                    },
-                }         // Ｙ軸設定 
-            ]
-        }
-  });    
+    },
+    {% endautoescape %}],
+  }});    
 </script>
 
 {% endblock %}
