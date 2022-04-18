@@ -54,7 +54,7 @@ table {
     width: 150px;
     height: 100%;
     padding-top: 50px;
-    background: rgba(255, 0, 0, 0.3);
+    background: rgba(255, 0, 0, 0.5);
     font-size: 20px;
     box-sizing: border-box;
     z-index: 2;
@@ -65,7 +65,7 @@ table {
   }
   #wrapper nav ul li a {
     text-decoration: none;
-    color: red;
+    color: white;
   }
   #wrapper .btn-gnavi {
     position: fixed;
