@@ -1,4 +1,55 @@
 {% extends 'WorkApp/template.html' %}
 {% block body_content %}
-    <p>input2.html</p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<table class='tb'>
+    {% for i in dict.0 %}
+    <th>{{ i }}</th>
+    {% endfor %}
+    {% for i in dict %}
+    <tr>
+        <td>{{ i.id }}</td>
+        <td>{{ i.title }}</td>
+        <td>{{ i.syusai }}</td>
+        <td>{{ i.start_day }}</td>
+        <td>{{ i.end_day }}</td>
+        <td>{{ i.price }}</td>
+    </tr>
+    {% endfor %} 
+</table>
+<style>
+    .tb {
+    table-layout:fixed;
+    width:95%;
+    }
+</style>
+<div style="margin-top: 20px;">
+    <div class="card" style="border-radius: 15px; background-color:grey; margin:10px;">
+    <div style='margin:20px;'> 
+        <form method="POST" class="input2-form">{% csrf_token %}
+        <div class="range col-lg-6" style='margin-top:5px;'>
+            <input type="text" name="id">
+            <input type="text" name="title">
+            <input type="text" name="furikomi">
+        </div>
+
+        <div class="range col-lg-6" style='margin-top:5px;'>
+            <input type="date" name="furikomi_day">
+        </div>
+
+        <div class="range col-lg-6" style='margin-top:5px;'>
+            <input type="text" name="price">
+        </div>
+        <div class="range col-lg-6">
+            <input type="text" name="memo">
+        </div>
+    
+<!-- 送信（保存）ボタン-->
+        <button type="submit" class="save btn btn-danger" style="margin-top: 10px;">入力</button>
+        </form>
+    </div>
+    </div>
+</div>
 {% endblock %}
