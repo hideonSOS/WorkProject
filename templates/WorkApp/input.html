@@ -1,7 +1,7 @@
 {% extends 'WorkApp/template.html' %}
 {% block body_content %}
 <p>inputページ</p>
-<h2>メディア事業部請求・入力一覧</h2>
+<h2 style="font-family:sans-serif; font-size:20px;">メディア事業部請求・入力一覧</h2>
 <div>&nbsp;</div>
 
 <table class='tb'>
@@ -27,7 +27,7 @@
 </style>
 <p></p>
 <div style="margin-top: 20px;">
-  <div class="card" style="border-radius: 15px; background-color: rgb(150,150,150); margin:10px; width:700px;">
+  <div class="card" style="border-radius: 15px; background-color: rgb(150,150,150); margin:10px; width:600px;">
     <div style='margin:20px;'> 
       <form method="POST" class="register-form ">{% csrf_token %}
         <div class="range col-lg-6" style='margin-top:5px;'>
