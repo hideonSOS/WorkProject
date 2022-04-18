@@ -16,7 +16,7 @@ var myChart = new Chart(ctx, {
     labels:{{ dict.monthlist }},
     
     datasets: [{
-      label: 'Red',
+      label: '請求合計額',
       data: [{{ dict.four }},
       {{ dict.five }},
       {{ dict.six }},
@@ -29,11 +29,11 @@ var myChart = new Chart(ctx, {
       {{ dict.one }},
       {{ dict.two }},
       {{ dict.three }}],
-      backgroundColor: '#f88',
+      backgroundColor: 'green',
   }, {
-      label: 'Green',
+      label: '支払総額',
       data: [1,2,3,4,5,6,7,8,9,10,11,12],
-      backgroundColor: '#484',
+      backgroundColor: 'orange',
     },{% endautoescape %}],
   },
 });    

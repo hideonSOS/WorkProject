@@ -60,6 +60,8 @@ def print_database2():
 def seiri_database():
     df = print_database()
     df['end_day'] = pd.to_datetime(df['end_day'],format='%Y-%m-%d')
+    df2 = print_database2()
+    df2['furikomi_day'] = pd.to_datetime(df2['furikomi_day'],format='%Y-%m-%d')
     list = ['４月','５月','６月','７月','８月','９月','１０月','１１月','１２月','１月','２月','３月']
     dict={
     'four':df.loc[df['end_day'].dt.month==4]['price'].sum(),
@@ -74,6 +76,18 @@ def seiri_database():
     'one':df.loc[df['end_day'].dt.month==1]['price'].sum(),
     'two':df.loc[df['end_day'].dt.month==2]['price'].sum(),
     'three':df.loc[df['end_day'].dt.month==3]['price'].sum(),
-    'monthlist':[i for i in list]
+    'monthlist':[i for i in list],
+    'four_2':df2.loc[df2['furikomi_day'].dt.month==4]['price'].sum(),
+    'five_2':df2.loc[df2['furikomi_day'].dt.month==5]['price'].sum(),
+    'six_2':df2.loc[df2['furikomi_day'].dt.month==6]['price'].sum(),
+    'seven_2':df2.loc[df2['furikomi_day'].dt.month==7]['price'].sum(),
+    'eight_2':df2.loc[df2['furikomi_day'].dt.month==8]['price'].sum(),
+    'nine_2':df2.loc[df2['furikomi_day'].dt.month==9]['price'].sum(),
+    'ten_2':df2.loc[df2['furikomi_day'].dt.month==10]['price'].sum(),
+    'eleven_2':df2.loc[df2['furikomi_day'].dt.month==11]['price'].sum(),
+    'twelve_2':df2.loc[df2['furikomi_day'].dt.month==12]['price'].sum(),
+    'one_2':df2.loc[df2['furikomi_day'].dt.month==1]['price'].sum(),
+    'two_2':df2.loc[df2['furikomi_day'].dt.month==2]['price'].sum(),
+    'three_2':df2.loc[df2['furikomi_day'].dt.month==3]['price'].sum()
 }
     return dict
