@@ -46,7 +46,7 @@ table {
   font-family: sans-serif;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 900px) {
   #wrapper nav {
     position: fixed;
     top: 0;
