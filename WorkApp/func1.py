@@ -45,6 +45,7 @@ def print_database():
     connection = psycopg2.connect(**connection_config) 
     cursor=connection.cursor() 
     df = pd.read_sql(sql='SELECT * FROM r4table;',con=connection) 
+    df.sort_values('id',inplace=True)
     connection.commit()
     connection.close()
     return df
@@ -53,6 +54,7 @@ def print_database2():
     connection = psycopg2.connect(**connection_config) 
     cursor=connection.cursor() 
     df = pd.read_sql(sql='SELECT * FROM r4table_2;',con=connection) 
+    df.sort_values('id',inplace=True)
     connection.commit()
     connection.close()
     return df
