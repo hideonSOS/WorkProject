@@ -3,6 +3,10 @@ body {
   color: white;
 }
 
+.tb {
+  border: 1px #ff6464, solid;
+}
+
 .canvas {
   position: relative;
   width: calc(100%-40px);
