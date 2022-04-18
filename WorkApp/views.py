@@ -75,6 +75,12 @@ def input(request):
     return render(request,'WorkApp/input.html',{'dict':dict})
 
 @login_required
+def input2(request):
+    return render(request, 'WorkApp/input2.html')
+
+
+
+@login_required
 def output(request):
     return render(request, 'WorkApp/output.html')
 
