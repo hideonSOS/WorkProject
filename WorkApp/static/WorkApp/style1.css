@@ -3,6 +3,10 @@ body {
   color: white;
 }
 
+th {
+  border: solid #ff6464 1px;
+}
+
 td {
   border: solid #ff6464 1px;
 }
