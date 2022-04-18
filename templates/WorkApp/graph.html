@@ -48,7 +48,37 @@ var myChart = new Chart(ctx, {
       backgroundColor: '#FF9933',
     },{% endautoescape %}],
   },
-});    
+  options: {
+        :
+        scales: {         // 軸設定
+            xAxes: [           // Ｘ軸設定
+                {
+                    scaleLabel: {   // 軸ラベル
+                       fontColor :'cyan'
+                    },
+                    gridLines: {    // 目盛線
+                        color:'red'
+                    },
+                    ticks: {        // 目盛り
+                        fontColor:'yellow'
+                    },
+                }
+            ],
+            yAxes: [  
+                {
+                    scaleLabel: {   // 軸ラベル
+                       fontColor :'cyan'
+                    },
+                    gridLines: {    // 目盛線
+                        color:'red'
+                    },
+                    ticks: {        // 目盛り
+                        fontColor:'yellow'
+                    },
+                }         // Ｙ軸設定 
+            ]
+        }
+  });    
 </script>
 
 {% endblock %}
