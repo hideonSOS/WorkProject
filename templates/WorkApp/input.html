@@ -2,7 +2,7 @@
 {% block body_content %}
 <p>inputページ</p>
 <h2>メディア事業部請求・入力一覧</h2>
-
+<div>&nbsp;</div>
 
 <table class='tb'>
   {% for i in dict.0 %}
@@ -25,8 +25,9 @@
     width:95%;
   }
 </style>
+<p></p>
 <div style="margin-top: 20px;">
-  <div class="card" style="border-radius: 15px; background-color: rgb(150,150,150); margin:10px; width:800px;">
+  <div class="card" style="border-radius: 15px; background-color: rgb(150,150,150); margin:10px; width:600px;">
     <div style='margin:20px;'> 
       <form method="POST" class="register-form ">{% csrf_token %}
         <div class="range col-lg-6" style='margin-top:5px;'>
