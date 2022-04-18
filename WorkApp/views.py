@@ -2,7 +2,7 @@ from django.shortcuts import render,redirect
 from .forms import InputForm, LoginForm
 from .models import Series, test_database1
 from django.contrib.auth.views import LoginView,LogoutView
-from .func1 import delete_database, input_database, print_database,seiri_database
+from .func1 import delete_database, input_database,input_database2, print_database,print_database2, seiri_database
 from django.contrib.auth.decorators import login_required
 
 @login_required
@@ -76,8 +76,19 @@ def input(request):
 
 @login_required
 def input2(request):
-    return render(request, 'WorkApp/input2.html')
-
+    id = request.POST.get('id')
+    title = request.POST.get('title')
+    furikomi=request.POST.get('furikomi')
+    furikomi_day=request.POST.get('furikomi_day')
+    price = request.POST.get('price')
+    memo = request.POST.get('memo')
+    df = print_database2()
+    dict = df.to_dict('records')
+    if request.method=='POST':
+        input_database2(id,title,furikomi,furikomi_day,price,memo)
+        df = print_database2()
+        dict = df.to_dict('records')
+    return render(request, 'WorkApp/input2.html',{'dict':dict})
 
 
 @login_required
