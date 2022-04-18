@@ -49,6 +49,14 @@ def print_database():
     connection.close()
     return df
 
+def print_database2(): 
+    connection = psycopg2.connect(**connection_config) 
+    cursor=connection.cursor() 
+    df = pd.read_sql(sql='SELECT * FROM r4table_2;',con=connection) 
+    connection.commit()
+    connection.close()
+    return df
+
 def seiri_database():
     df = print_database()
     df['end_day'] = pd.to_datetime(df['end_day'],format='%Y-%m-%d')
