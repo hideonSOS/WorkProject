@@ -11,6 +11,10 @@ td {
   border: solid #ff6464 1px;
 }
 
+.tb {
+  width: 90%;
+}
+
 .canvas {
   position: relative;
   width: calc(100%-40px);
