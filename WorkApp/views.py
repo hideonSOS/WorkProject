@@ -14,10 +14,10 @@ def page1(request):
     return render(request, 'WorkApp/page1.html')
 
 @login_required
-def page2(request):
+def graph(request):
     dicton = seiri_database()
     
-    return render(request, 'WorkApp/page2.html', {'dict':dicton})
+    return render(request, 'WorkApp/graph.html', {'dict':dicton})
 
 @login_required
 def page3(request):
