@@ -14,38 +14,43 @@
     
     <link rel="stylesheet" href="{% static 'WorkApp/style1.css' %}">
     <script src="{% static 'WorkApp/script1.js' %}"></script>
-
 </head>
-<body>
-    
-<div id="wrapper">
-    <p class ="btn-gnavi">
-    <span></span>
-    <span></span>
-    <span></span>
-    </p>
 
-    <nav id="global-navi">
-        <ul class="menu">     
-            <li><a href="/page1">page1</a></li>
-            <li><a href="/output">output</a></li>
-            <li><a href="/input">input</a></li>
-            <li><a href="/page2">page2</a></li>
-            <li><a href="/page3">page3</a></li>
-            <li><a href="/delete">delete</a></li>
-            <li>
-            {% if user.is_authenticated %}
-                <span style="font-size:15px; text-align: right; width: 300px;">
-                    <a href="{% url 'logout' %}" style="color:red; text-decoration: underline;">
-                    ログイン中
-                    </a>
-            
-                </span>
-            </li>
-            {% endif %}
-        </ul>
-    </nav>
-</div>
+<body>
+
+    <div id="wrapper">
+        <p class ="btn-gnavi">
+        <span></span>
+        <span></span>
+        <span></span>
+        </p>
+        <nav id="global-navi">
+            <ul class="menu">     
+                <li><a href="/page1">page1</a></li>
+                <li><a href="/output">output</a></li>
+                <li><a href="/input">input</a></li>
+                <li><a href="/page2">page2</a></li>
+                <li><a href="/page3">page3</a></li>
+                <li><a href="/delete">delete</a></li>
+                <li class="login"> 
+                {% if user.is_authenticated %}
+                    <span style="font-size:15px; text-align: right; width: 300px;">
+                        <a href="{% url 'logout' %}" style="color:red; text-decoration: underline;">
+                        ログイン中
+                        </a>
+                    </span>
+                </li>
+                {% endif %}
+            </ul>
+        </nav>
+    </div>
+
+    <style>.login{
+        display:flex; 
+        flex-flow: column; 
+        list-style-type: none;
+        }
+    </style>
 
     {% block body_content %}
         
