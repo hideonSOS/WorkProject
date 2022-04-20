@@ -1,6 +1,6 @@
 body {
-  background: graident_end;
-  background-image: radial-gradient(top, circle cover, gradient_start, graident_end 80%);
+  background: #2e3441;
+  background-image: radial-gradient(top, circle cover, #4e7a89, #2e3441 80%);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
