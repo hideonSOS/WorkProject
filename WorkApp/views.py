@@ -22,15 +22,12 @@ def graph1(request):
 @login_required
 def graph2(request):
     dict = type_print()
-    
-    
     return render(request, 'WorkApp/graph2.html',{'dict':dict})
 
 @login_required
 def graph3(request):
     df = print_database()
     dict = df.to_dict('records')
-    
     return render(request, 'WorkApp/graph3.html',{'dict':dict})
 
 @login_required
