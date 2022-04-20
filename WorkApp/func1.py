@@ -10,6 +10,13 @@ connection_config = {
     'password': 'p@ssword' 
 } 
 #^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+"""
+Aqua1=['解説者','解説','MC','ディレクター','スタッフ','映像','音響','ＨＰ予想記者','配信機材一式','備品等','実況放送']
+Aqua2=[37000, 43000, 53000, 32000, 20000, 32000, 32000,	32000,	9700, 7000,	6500]
+Aquadf = pd.DataFrame(Aqua2).T
+Aquadf.columns=Aqua1
+"""
+#^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 def input_database(id,series,syusai,start_day,end_day,price): 
     connection = psycopg2.connect(**connection_config) 
@@ -41,6 +48,8 @@ def delete_database(id):
     connection.commit()
     connection.close()
 
+
+#r4_table（請求データベース接続）
 def print_database(): 
     connection = psycopg2.connect(**connection_config) 
     cursor=connection.cursor() 
@@ -50,6 +59,7 @@ def print_database():
     connection.close()
     return df
 
+#r4_table_2（支払いデータベース接続）
 def print_database2(): 
     connection = psycopg2.connect(**connection_config) 
     cursor=connection.cursor() 
@@ -90,6 +100,8 @@ def seiri_database():
     'twelve_2':df2.loc[df2['furikomi_day'].dt.month==12]['price'].sum(),
     'one_2':df2.loc[df2['furikomi_day'].dt.month==1]['price'].sum(),
     'two_2':df2.loc[df2['furikomi_day'].dt.month==2]['price'].sum(),
-    'three_2':df2.loc[df2['furikomi_day'].dt.month==3]['price'].sum()
+    'three_2':df2.loc[df2['furikomi_day'].dt.month==3]['price'].sum(),
+    'total_1':df1.loc[df1['end_day'].dt.year==2022]['price'].sum(),
+    'total_2':df2.loc[df2['furikomi_day'].dt.year==2022]['price'].sum()
 }
     return dict
