@@ -64,7 +64,7 @@ def print_database():
     df.sort_values('id',inplace=True)
     connection.commit()
     connection.close()
-    df['end_day2']=[i for i in df['end_day']]
+    df['end_day2']=[Weekday(i) for i in df['end_day']]
     return df
 
 #r4_table_2（支払いデータベース接続）
@@ -78,11 +78,7 @@ def print_database2():
 
     return df
 
-def Weekday(no):
-    from datetime import datetime
-    dt = no
-    date = dt.weekday()
-    return date
+
     
 #整理データベースメソッド→グラフ.htmlにデータを整理して送信するデーター加工
 def seiri_database():
