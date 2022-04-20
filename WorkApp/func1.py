@@ -64,7 +64,9 @@ def print_database():
     df.sort_values('id',inplace=True)
     connection.commit()
     connection.close()
-    df['end_day2']=[i for i in df['end_day']]
+    a = []
+    a = a.append([i for i in df['end_day']])
+    df['end_day2']=a
 
     return df
 
