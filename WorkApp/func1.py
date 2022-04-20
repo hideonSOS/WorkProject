@@ -78,7 +78,8 @@ def print_database2():
     df.sort_values('id',inplace=True)
     connection.commit()
     connection.close()
-
+    df['furikomi_day2']=[Weekday(i) for i in df['furikomi_day']]
+    df['price2']=[f'\\{i:,}' for i in df['price']]
     return df
 
 
