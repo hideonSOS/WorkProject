@@ -52,7 +52,7 @@ def Weekday(day):
     from datetime import datetime
     dt = datetime(day)
     no = dt.weekday()
-    return w_list[no]
+    return w_list[int(no)]
 
 #r4_table（請求データベース接続）
 def print_database(): 
