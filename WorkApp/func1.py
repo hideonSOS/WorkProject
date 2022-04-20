@@ -47,12 +47,11 @@ def delete_database(id):
     cursor.execute(SQL) 
     connection.commit()
     connection.close()
-
+w_list = ['(月)', '(火)', '(水)', '(木)', '(金)', '(土)', '(日)']
 def Weekday(day):
     from datetime import datetime
     dt = datetime(day)
     no = dt.weekday()
-    w_list = ['(月)', '(火)', '(水)', '(木)', '(金)', '(土)', '(日)']
     return w_list[no]
 
 #r4_table（請求データベース接続）
