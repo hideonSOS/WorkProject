@@ -120,6 +120,7 @@ def type_print():
     Aqua2=[37000, 43000, 53000, 32000, 20000, 32000, 32000,	32000,	9700, 7000,	6500]
     Aquadf = pd.DataFrame(Aqua2).T
     Aquadf.columns=Aqua1
+    df2 = print_database2()
     dict={
         'Kaisetsu1':int(Aquadf['解説者'].values*Nisu*zeiritu),
         'Kaisetsu2':int(Aquadf['解説'].values*Nisu*zeiritu),
@@ -133,7 +134,18 @@ def type_print():
         'Goods':int(Aquadf['備品等'].values*Nisu*zeiritu),
         'Jikyo':int(Aquadf['実況放送'].values*Nisu*zeiritu),
         'li1':Aqua1,
-        'li2':Aqua2
+        'li2':Aqua2,
+        'Kaisetsu1':int(df2[df2['type']=='q']['price'].sum()),
+        'Kaisetsu2':int(Aquadf['解説'].values*Nisu*zeiritu),
+        'MC':int(Aquadf['MC'].values*Nisu*zeiritu),
+        'Director':int(Aquadf['ディレクター'].values*Nisu*zeiritu),
+        'Staff':int(Aquadf['スタッフ'].values*Nisu*zeiritu),
+        'VisionDirector':int(Aquadf['映像'].values*Nisu*zeiritu),
+        'SoundDirector':int(Aquadf['音響'].values*Nisu*zeiritu),
+        'HP':int(Aquadf['ＨＰ予想記者'].values*Nisu*zeiritu),
+        'Machine':int(Aquadf['配信機材一式'].values*Nisu*zeiritu),
+        'Goods':int(Aquadf['備品等'].values*Nisu*zeiritu),
+        'Jikyo':int(Aquadf['実況放送'].values*Nisu*zeiritu),
     }
 
     return dict
