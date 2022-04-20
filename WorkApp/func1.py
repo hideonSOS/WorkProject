@@ -57,6 +57,7 @@ def print_database():
     df.sort_values('id',inplace=True)
     connection.commit()
     connection.close()
+    df['end_day2'] = str(pd.to_datetime(df['end_day'],format='%Y-%m-%d')) + str([weekday(i) for i in df['end_day']])
     return df
 
 #r4_table_2（支払いデータベース接続）
@@ -67,6 +68,7 @@ def print_database2():
     df.sort_values('id',inplace=True)
     connection.commit()
     connection.close()
+    
     return df
 
 def Weekday(no):
@@ -77,7 +79,7 @@ def Weekday(no):
 #整理データベースメソッド→グラフ.htmlにデータを整理して送信するデーター加工
 def seiri_database():
     df = print_database()
-    df['end_day2'] = [str(pd.to_datetime(df['end_day'],format='%Y-%m-%d'))+str(Weekday(i) for i in df['end_day'])]
+    df['end_day'] = [pd.to_datetime(df['end_day'],format='%Y-%m-%d')
     df2 = print_database2()
     df2['furikomi_day'] = pd.to_datetime(df2['furikomi_day'],format='%Y-%m-%d')
     queryword1="'2022-04-01'<end_day<'2023-03-31'"
