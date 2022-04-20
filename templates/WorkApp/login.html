@@ -15,8 +15,9 @@
     <p>認証に失敗しました。</p>
     {% endif %}
     <div class="signin cf">
-        <p style="text-align:center">メディア事業部・業務アプリ</p>
+        
     <div class="avatar">
+        <p style="text-align:center; color:white;">メディア事業部・業務アプリ</p>
     <div class="container" style="margin-top:30px;">
         <form method="POST">{% csrf_token %}
             <div style="width:300px;">{{ form.username }}</div>
