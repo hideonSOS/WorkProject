@@ -53,8 +53,7 @@ def Weekday(day):
     dt = datetime(day)
     no = dt.weekday()
     w_list = ['(月)', '(火)', '(水)', '(木)', '(金)', '(土)', '(日)']
-    dict = w_list[0]
-    return dict
+    return w_list[no]
 
 #r4_table（請求データベース接続）
 def print_database(): 
