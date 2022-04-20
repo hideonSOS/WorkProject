@@ -19,8 +19,7 @@ var myChart = new Chart(ctx, {
     
     datasets: [{
         label: '請求合計額',
-        data: [{{ dict.Kaisetsu1 }},
-        {{ dict.Kaisetsu2 }},
+        data: [{{ dict.Kaisetsu }},
         {{ dict.MC }},
         {{ dict.Director }},
         {{ dict.Staff }},
@@ -34,8 +33,7 @@ var myChart = new Chart(ctx, {
     }, 
     {
     label: '支払総額',
-    data: [{{ dict.Kaisetsu1_2 }},
-        {{ dict.Kaisetsu2_2 }},
+    data: [{{ dict.Kaisetsu_2 }},
         {{ dict.MC_2 }},
         {{ dict.Director_2 }},
         {{ dict.Staff_2 }},
