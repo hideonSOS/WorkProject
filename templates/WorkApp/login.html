@@ -17,14 +17,14 @@
     <div class="signin cf">
         
     <div class="avatar">
-        <p style="text-align:center; color:white; font-size: 24px;">メディア事業部・業務アプリ</p>
+        <p style="text-align:center; color:white; font-size: 20px;">メディア事業部・業務アプリ</p>
     <div class="container" style="margin-top:30px;">
         <form method="POST">{% csrf_token %}
             <div style="width:300px;">{{ form.username }}</div>
             <div style="width:300px;">{{ form.password }}</div>
             <dir style="margin-top:20px;">
-            <div class="row" style="margin-top:20px;">
-                <button type="submit" value="login" class="btn btn-primary">
+            <div class="row" style="margin-top:20px; margin-left:0px;">
+                <button type="submit" value="login" class="btn btn-light">
                     login
                 </button>
             </div>
