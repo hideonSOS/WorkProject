@@ -76,7 +76,8 @@ def seiri_database():
     df['end_day'] = pd.to_datetime(df['end_day'],format='%Y-%m-%d')
     df2 = print_database2()
     df2['furikomi_day'] = pd.to_datetime(df2['furikomi_day'],format='%Y-%m-%d')
-    queryword="'2022-04-01'<end_day<'2023-03-31'"
+    queryword1="'2022-04-01'<end_day<'2023-03-31'"
+    queryword1="'2022-04-01'<furikomi_day<'2023-03-31'"
     list = ['４月','５月','６月','７月','８月','９月','１０月','１１月','１２月','１月','２月','３月']
     dict={
     'four':df.loc[df['end_day'].dt.month==4]['price'].sum(),
@@ -104,8 +105,8 @@ def seiri_database():
     'one_2':df2.loc[df2['furikomi_day'].dt.month==1]['price'].sum(),
     'two_2':df2.loc[df2['furikomi_day'].dt.month==2]['price'].sum(),
     'three_2':df2.loc[df2['furikomi_day'].dt.month==3]['price'].sum(),
-    'total_1':df.query(queryword)['price'].sum(),
-    'total_2':df2.query(queryword)['price'].sum(),
+    'total_1':df.query(queryword1)['price'].sum(),
+    'total_2':df2.query(queryword2)['price'].sum(),
 }
     return dict
 
