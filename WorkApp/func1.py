@@ -57,7 +57,6 @@ def print_database():
     df.sort_values('id',inplace=True)
     connection.commit()
     connection.close()
-    
     return df
 
 #r4_table_2（支払いデータベース接続）
