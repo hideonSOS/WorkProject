@@ -51,8 +51,9 @@ def delete_database(id):
 def Weekday(day):
     from datetime import datetime
     dt = datetime(day)
+    ind = dt.weekday()
     w_list = ['(月)', '(火)', '(水)', '(木)', '(金)', '(土)', '(日)']
-    data = day
+    data = w_list[ind]
     return data
 
 #r4_table（請求データベース接続）
