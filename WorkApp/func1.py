@@ -121,8 +121,8 @@ def type_print():
     Aquadf = pd.DataFrame(Aqua2).T
     Aquadf.columns=Aqua1
     dict={
-        'kaisetsu1':int(Aquadf['解説者'].values*Nisu*zeiritu),
-        'kaisetsu2':int(Aquadf['解説'].values*Nisu*zeiritu),
+        'Kaisetsu1':int(Aquadf['解説者'].values*Nisu*zeiritu),
+        'Kaisetsu2':int(Aquadf['解説'].values*Nisu*zeiritu),
         'MC':int(Aquadf['MC'].values*Nisu*zeiritu),
         'Director':int(Aquadf['ディレクター'].values*Nisu*zeiritu),
         'Staff':int(Aquadf['スタッフ'].values*Nisu*zeiritu),
@@ -132,7 +132,8 @@ def type_print():
         'Machine':int(Aquadf['配信機材一式'].values*Nisu*zeiritu),
         'Goods':int(Aquadf['備品等'].values*Nisu*zeiritu),
         'Jikyo':int(Aquadf['実況放送'].values*Nisu*zeiritu),
-
+        'li1':Aqua1,
+        'li2':Aqua2
     }
 
     return dict
