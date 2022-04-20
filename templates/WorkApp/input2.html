@@ -32,9 +32,9 @@
     <div style='margin:20px;'> 
         <form method="POST" class="input2-form">{% csrf_token %}
         <div class="range col-lg-6" style='margin-top:5px;'>
-            <input type="text" name="id">
-            <input type="text" name="title" placeholder="開催名を入力してください">
-            <input type="text" name="furikomi">
+            <input type="text" name="id" placeholder="idを数字で入力">
+            <input type="text" name="title" placeholder="開催名を入力">
+            <input type="text" name="furikomi" placeholder="支払先を入力">
         </div>
 
         <div class="range col-lg-6" style='margin-top:5px;'>
@@ -42,7 +42,7 @@
         </div>
 
         <div class="range col-lg-6" style='margin-top:5px;'>
-            <input type="text" name="price">
+            <input type="text" name="price" placeholder="支払金額を入力">
         </div>
         <div class="range col-lg-6" style='margin-top:5px;'>
             <input type="radio" name="type" value="解説者">解説者
@@ -57,7 +57,7 @@
             <input type="radio" name="type" value="実況放送">実況放送
         </div>
         <div class="range col-lg-6">
-            <input type="text" name="memo" style="width: 500px; height: 200px;">
+            <input type="text" name="memo" style="width: 500px; height: 200px;" placeholder="備考">
         </div>
     
 <!-- 送信（保存）ボタン-->
@@ -71,7 +71,7 @@
         <div style='margin:20px;'> 
         <form method="POST" class="register-form">{% csrf_token %}
             <div class="range col-lg-6" style='margin-top:5px;'>
-            <input type="text" name="id">
+            <input type="text" name="id" placeholder="削除したいデータのidを入力">
             </div>
             <button type="submit" class="save btn btn-danger" style="margin-top: 10px;">削除</button>
         </div>
