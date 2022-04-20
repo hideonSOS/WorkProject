@@ -47,12 +47,13 @@ def delete_database(id):
     cursor.execute(SQL) 
     connection.commit()
     connection.close()
-w_list = ['(月)', '(火)', '(水)', '(木)', '(金)', '(土)', '(日)']
+
 def Weekday(day):
     from datetime import datetime
     dt = datetime(day)
     no = dt.weekday()
-    data = str(w_list[int(no)])
+    w_list = ['(月)', '(火)', '(水)', '(木)', '(金)', '(土)', '(日)']
+    data = str(w_list[no])
     return data
 
 #r4_table（請求データベース接続）
@@ -63,7 +64,7 @@ def print_database():
     df.sort_values('id',inplace=True)
     connection.commit()
     connection.close()
-    df['end_day2']=[i for i in df['end_day']]
+    df['end_day2']=[Weekday(i) for i in df['end_day']]
 
     return df
 
