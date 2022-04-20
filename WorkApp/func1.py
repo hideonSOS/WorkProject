@@ -69,12 +69,16 @@ def print_database2():
     connection.close()
     return df
 
+
+from datetime import datetime as dt
 def seiri_database():
     df = print_database()
     df['end_day'] = pd.to_datetime(df['end_day'],format='%Y-%m-%d')
     df2 = print_database2()
     df2['furikomi_day'] = pd.to_datetime(df2['furikomi_day'],format='%Y-%m-%d')
     list = ['４月','５月','６月','７月','８月','９月','１０月','１１月','１２月','１月','２月','３月']
+    df = df.set_index('end_day')
+    df2 = df2.set_index('furikomi_day')
     dict={
     'four':df.loc[df['end_day'].dt.month==4]['price'].sum(),
     'five':df.loc[df['end_day'].dt.month==5]['price'].sum(),
@@ -101,7 +105,7 @@ def seiri_database():
     'one_2':df2.loc[df2['furikomi_day'].dt.month==1]['price'].sum(),
     'two_2':df2.loc[df2['furikomi_day'].dt.month==2]['price'].sum(),
     'three_2':df2.loc[df2['furikomi_day'].dt.month==3]['price'].sum(),
-    'total_1':df.query("'2022-03-01'>end_day>'2023-03-31'")['price'].sum(),
-    'total_2':df.query("'2022-03-01'>end_day>'2023-03-31'")['price'].sum()
+    'total_1':"test"
+    # 'total_2':df2['2022-04-01':'2023-03-31']['price'].sum()
 }
     return dict
