@@ -64,10 +64,7 @@ def print_database():
     df.sort_values('id',inplace=True)
     connection.commit()
     connection.close()
-    a = []
-    a = a.append([i for i in df['end_day']])
-    df['end_day2']=a
-
+    df['end_day2']=[i for i in df['end_day']]
     return df
 
 #r4_table_2（支払いデータベース接続）
