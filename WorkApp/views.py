@@ -22,7 +22,7 @@ def graph1(request):
 @login_required
 def graph2(request):
     df = type_print()
-    dict = df.to_dict('records')
+    
     
     return render(request, 'WorkApp/graph2.html',{'dict':dict})
 
