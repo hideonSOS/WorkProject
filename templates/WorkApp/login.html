@@ -14,6 +14,8 @@
     {% if form.errors %}
     <p>認証に失敗しました。</p>
     {% endif %}
+    <div class="signin cf">
+    <div class="avatar">
     <div class="container" style="margin-top:30px;">
         <form method="POST">{% csrf_token %}
             <div style="width:300px;">{{ form.username }}</div>
@@ -26,5 +28,7 @@
             </div>
         </form>
     </div>
+</div>
+</div>
 </body>
 </html>
