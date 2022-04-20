@@ -29,7 +29,7 @@ def input_database(id,series,syusai,start_day,end_day,price):
     connection.close()
 
 #r4table_2支払い関係のデータベースを入力
-def input_database2(id,title,furikomi,furikomi_day,price,memo): 
+def input_database2(id,title,furikomi,furikomi_day,price,type,memo): 
     connection = psycopg2.connect(**connection_config) 
     cursor=connection.cursor() 
     SQL = f"INSERT INTO r4table_2 VALUES({id}, '{title}', '{furikomi}', '{furikomi_day}', {price},'{type}','{memo}')" 
