@@ -47,10 +47,9 @@ def input(request):
     dict = df.to_dict('records')
     if request.method=='POST':
         input_database(id,series,syusai,start_day,end_day,price)
-        # delete_database(id)
         df = print_database()
         dict = df.to_dict('records')
-        
+
     return render(request,'WorkApp/input.html',{'dict':dict})
 
 @login_required
