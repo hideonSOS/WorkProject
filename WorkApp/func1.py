@@ -51,9 +51,11 @@ def delete_database(id):
 def Weekday(day):
     from datetime import datetime
     dt = datetime(day)
-    dict = dt.weekday()
+    no = dt.weekday()
+    w_list = ['(月)', '(火)', '(水)', '(木)', '(金)', '(土)', '(日)']
+    dict = w_list[no]
     return dict
-    
+
 #r4_table（請求データベース接続）
 def print_database(): 
     connection = psycopg2.connect(**connection_config) 
