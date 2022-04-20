@@ -15,7 +15,7 @@ var myChart = new Chart(ctx, {
     
     {% autoescape off %}
     
-    labels:[{% for i in dict.li1 %}{{ i }}{% endfor %}],
+    labels:[{{ dict.li1 }}],
     
     datasets: [{
         label: '請求合計額',
