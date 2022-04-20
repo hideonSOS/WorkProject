@@ -40,10 +40,11 @@ def input_database2(id,title,furikomi,furikomi_day,price,type,memo):
     connection.close()
 
 
-def delete_database(id): 
+def delete_database(where,id): 
     connection = psycopg2.connect(**connection_config) 
     cursor=connection.cursor() 
-    SQL = f"DELETE FROM r4table WHERE id = {id}" 
+    # SQL = f"DELETE FROM r4table WHERE id = {id}" 
+    SQL = f"DELETE FROM {where} WHERE id = {id}" 
     cursor.execute(SQL) 
     connection.commit()
     connection.close()
