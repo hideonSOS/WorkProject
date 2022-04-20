@@ -68,9 +68,14 @@ def input2(request):
     df = print_database2()
     dict = df.to_dict('records')
     if request.method=='POST':
-        input_database2(id,title,furikomi,furikomi_day,price,type,memo)
-        df = print_database2()
-        dict = df.to_dict('records')
+        if 'price' in request.POST:
+            input_database2(id,title,furikomi,furikomi_day,price,type,memo)
+            df = print_database2()
+            dict = df.to_dict('records')
+        else:
+            delete_database('r4table2',id)
+            df = print_database2()
+            dict = df.to_dict('records')
     return render(request, 'WorkApp/input2.html',{'dict':dict})
 
 
