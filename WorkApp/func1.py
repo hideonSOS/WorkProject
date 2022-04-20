@@ -77,8 +77,6 @@ def seiri_database():
     df2 = print_database2()
     df2['furikomi_day'] = pd.to_datetime(df2['furikomi_day'],format='%Y-%m-%d')
     list = ['４月','５月','６月','７月','８月','９月','１０月','１１月','１２月','１月','２月','３月']
-    df = df.set_index('end_day')
-    df2 = df2.set_index('furikomi_day')
     dict={
     'four':df.loc[df['end_day'].dt.month==4]['price'].sum(),
     'five':df.loc[df['end_day'].dt.month==5]['price'].sum(),
