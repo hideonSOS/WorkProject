@@ -21,7 +21,7 @@ def graph1(request):
 
 @login_required
 def graph2(request):
-    df = type_print()
+    dict = type_print()
     
     
     return render(request, 'WorkApp/graph2.html',{'dict':dict})
