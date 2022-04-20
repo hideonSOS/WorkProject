@@ -6,7 +6,7 @@
 <div>&nbsp;</div>
 
 <table class='tb'>
-    <th>ID</th><th>開催タイトル</th><th>支払先</th><th>支払日</th><th>支払額</th><th>備考</th>
+    <th>ID</th><th>開催タイトル</th><th>支払先</th><th>支払日</th><th>支払額</th><th>種別</th><th>備考</th>
     {% for i in dict %}
     <tr>
         <td>{{ i.id }}</td>
@@ -14,6 +14,7 @@
         <td>{{ i.furikomi }}</td>
         <td>{{ i.furikomi_day }}</td>
         <td>{{ i.price }}</td>
+        <td>{{ i.type }}</td>
         <td>{{ i.memo }}</td>
     </tr>
     {% endfor %} 
@@ -36,6 +37,9 @@
 
         <div class="range col-lg-6" style='margin-top:5px;'>
             <input type="text" name="price">
+        </div>
+        <div class="range col-lg-6" style='margin-top:5px;'>
+            <input type="text" name="type">
         </div>
         <div class="range col-lg-6">
             <input type="text" name="memo" style="width: 500px; height: 200px;">
