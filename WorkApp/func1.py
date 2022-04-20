@@ -65,6 +65,7 @@ def print_database():
     connection.commit()
     connection.close()
     df['end_day2']=[Weekday(i) for i in df['end_day']]
+    df['start_day2']=[Weekday(i) for i in df['start_day']]
     return df
 
 #r4_table_2（支払いデータベース接続）
