@@ -57,8 +57,7 @@ def print_database():
     df.sort_values('id',inplace=True)
     connection.commit()
     connection.close()
-    df['end_day2'] = str(pd.to_datetime(df['end_day'],format='%Y-%m-%d')) + str([Weekday(i) for i in df['end_day']])
-    return df
+    df['end_day'] = pd.to_datetime(df['end_day'],format='%Y-%m-%d')
 
 #r4_table_2（支払いデータベース接続）
 def print_database2(): 
