@@ -21,6 +21,12 @@
 </table>
 
 <div>&nbsp;</div>
+<style>
+    .eria{
+        display:flex;
+    }
+</style>
+<div class="eria">
 <div style="margin-top: 20px;">
     <div class="card" style="border-radius: 15px; background-color:rgb(150,150,150); margin:10px; width:540px;">
     <div style='margin:20px;'> 
@@ -58,6 +64,18 @@
         <button type="submit" class="save btn btn-danger" style="margin-top: 10px;">入力</button>
         </form>
     </div>
+    </div>
+</div>
+<div style="margin-top: 20px;">
+    <div class="card" style="border-radius: 15px; background-color: rgb(150,150,150); margin:10px; width:240px;">
+        <div style='margin:20px;'> 
+        <form method="POST" class="register-form">{% csrf_token %}
+            <div class="range col-lg-6" style='margin-top:5px;'>
+            <input type="text" name="id">
+            </div>
+            <button type="submit" class="save btn btn-danger" style="margin-top: 10px;">削除</button>
+        </div>
+    </div>  
     </div>
 </div>
 {% endblock %}
