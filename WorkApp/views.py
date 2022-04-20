@@ -63,11 +63,12 @@ def input2(request):
     furikomi=request.POST.get('furikomi')
     furikomi_day=request.POST.get('furikomi_day')
     price = request.POST.get('price')
+    type = request.POST.get('type')
     memo = request.POST.get('memo')
     df = print_database2()
     dict = df.to_dict('records')
     if request.method=='POST':
-        input_database2(id,title,furikomi,furikomi_day,price,memo)
+        input_database2(id,title,furikomi,furikomi_day,price,type,memo)
         df = print_database2()
         dict = df.to_dict('records')
     return render(request, 'WorkApp/input2.html',{'dict':dict})
