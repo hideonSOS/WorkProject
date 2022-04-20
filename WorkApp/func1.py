@@ -116,14 +116,13 @@ def type_print():
     Nisu=198
     queryword="'2022-04-01'<end_day<'2023-03-31'"
     zeiritu = 1.1
-    Aqua1=['解説者','解説','MC','ディレクター','スタッフ','映像','音響','ＨＰ予想記者','配信機材一式','備品等','実況放送']
-    Aqua2=[37000, 43000, 53000, 32000, 20000, 32000, 32000,	32000,	9700, 7000,	6500]
+    Aqua1=['解説者','MC','ディレクター','スタッフ','映像','音響','ＨＰ予想記者','配信機材一式','備品等','実況放送']
+    Aqua2=[80000, 53000, 32000, 20000, 32000, 32000, 32000,	9700, 7000,	6500]
     Aquadf = pd.DataFrame(Aqua2).T
     Aquadf.columns=Aqua1
     df2 = print_database2()
     dict={
-        'Kaisetsu1':int(Aquadf['解説者'].values*Nisu*zeiritu),
-        'Kaisetsu2':int(Aquadf['解説'].values*Nisu*zeiritu),
+        'Kaisetsu':int(Aquadf['解説者'].values*Nisu*zeiritu),
         'MC':int(Aquadf['MC'].values*Nisu*zeiritu),
         'Director':int(Aquadf['ディレクター'].values*Nisu*zeiritu),
         'Staff':int(Aquadf['スタッフ'].values*Nisu*zeiritu),
@@ -135,8 +134,7 @@ def type_print():
         'Jikyo':int(Aquadf['実況放送'].values*Nisu*zeiritu),
         'li1':Aqua1,
         'li2':Aqua2,
-        'Kaisetsu1_2':int(df2[df2['type']=='q']['price'].sum()),
-        'Kaisetsu2_2':int(Aquadf['解説'].values*Nisu*zeiritu),
+        'Kaisetsu_2':int(df2[df2['type']=='q']['price'].sum()),
         'MC_2':int(Aquadf['MC'].values*Nisu*zeiritu),
         'Director_2':int(Aquadf['ディレクター'].values*Nisu*zeiritu),
         'Staff_2':int(Aquadf['スタッフ'].values*Nisu*zeiritu),
