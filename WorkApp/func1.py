@@ -120,7 +120,8 @@ def seiri_database():
     'one_2':df2.loc[df2['furikomi_day'].dt.month==1]['price'].sum(),
     'two_2':df2.loc[df2['furikomi_day'].dt.month==2]['price'].sum(),
     'three_2':df2.loc[df2['furikomi_day'].dt.month==3]['price'].sum(),
-    'total_1':f'\\{test:,}',
+    # 'total_1':f'\\{test:,}',
+    'total_1':f'testword',
     'total_2':df2.query(queryword2)['price'].sum(),
 }
     return dict
