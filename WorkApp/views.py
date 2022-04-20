@@ -75,6 +75,7 @@ def input2(request):
         else:
             delete_database('r4table_2',id)
             df = print_database2()
+            
             dict = df.to_dict('records')
     return render(request, 'WorkApp/input2.html',{'dict':dict})
 
