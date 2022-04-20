@@ -2,7 +2,7 @@ from django.shortcuts import render,redirect
 from .forms import InputForm, LoginForm
 from .models import Series, test_database1
 from django.contrib.auth.views import LoginView,LogoutView
-from .func1 import delete_database, input_database,input_database2, print_database,print_database2, seiri_database
+from .func1 import delete_database, input_database,input_database2, print_database,print_database2, seiri_database, type_print
 from django.contrib.auth.decorators import login_required
 
 @login_required
@@ -21,7 +21,7 @@ def graph1(request):
 
 @login_required
 def graph2(request):
-    df = print_database()
+    df = type_print()
     dict = df.to_dict('records')
     
     return render(request, 'WorkApp/graph2.html',{'dict':dict})
