@@ -46,10 +46,12 @@ def input(request):
     df = print_database()
     dict = df.to_dict('records')
     if request.method=='POST':
-        input_database(id,series,syusai,start_day,end_day,price)
-        df = print_database()
-        dict = df.to_dict('records')
-
+        if 'price' in request.POST:
+            input_database(id,series,syusai,start_day,end_day,price)
+            df = print_database()
+            dict = df.to_dict('records')
+        else:
+            print('test')
     return render(request,'WorkApp/input.html',{'dict':dict})
 
 @login_required
