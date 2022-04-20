@@ -101,7 +101,7 @@ def seiri_database():
     'one_2':df2.loc[df2['furikomi_day'].dt.month==1]['price'].sum(),
     'two_2':df2.loc[df2['furikomi_day'].dt.month==2]['price'].sum(),
     'three_2':df2.loc[df2['furikomi_day'].dt.month==3]['price'].sum(),
-    'total_1':df.query('2022-04-01'>'end_day'>'2023-03-31')['price'].sum(),
-    'total_2':df.query('2022-04-01'>'end_day'>'2023-03-31')['price'].sum()
+    'total_1':df.query("'2022-04-01'>end_day>'2023-03-31'")['price'].sum(),
+    'total_2':df.query("'2022-04-01'>end_day>'2023-03-31'")['price'].sum()
 }
     return dict
