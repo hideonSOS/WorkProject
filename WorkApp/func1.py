@@ -48,7 +48,12 @@ def delete_database(id):
     connection.commit()
     connection.close()
 
-
+def Weekday(day):
+    from datetime import datetime
+    dt = datetime(day)
+    dict = dt.weekday()
+    return dict
+    
 #r4_table（請求データベース接続）
 def print_database(): 
     connection = psycopg2.connect(**connection_config) 
@@ -57,6 +62,8 @@ def print_database():
     df.sort_values('id',inplace=True)
     connection.commit()
     connection.close()
+    df['end_day2']=[Weekday(i) for i in df['end_day']]
+
     return df
 
 #r4_table_2（支払いデータベース接続）
@@ -75,6 +82,7 @@ def Weekday(no):
     dt = no
     date = dt.weekday()
     return date
+    
 #整理データベースメソッド→グラフ.htmlにデータを整理して送信するデーター加工
 def seiri_database():
     df = print_database()
