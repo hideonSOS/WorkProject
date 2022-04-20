@@ -51,7 +51,9 @@ def input(request):
             df = print_database()
             dict = df.to_dict('records')
         else:
-            print('test')
+            delete_database(id)
+            df = print_database()
+            dict = df.to_dict('records')
     return render(request,'WorkApp/input.html',{'dict':dict})
 
 @login_required
