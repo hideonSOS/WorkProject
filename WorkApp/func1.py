@@ -127,7 +127,7 @@ def type_print():
         'Director':int(Aquadf['ディレクター'].values*Nisu*zeiritu),
         'Staff':int(Aquadf['スタッフ'].values*Nisu*zeiritu),
         'VisionDirector':int(Aquadf['映像'].values*Nisu*zeiritu),
-        'SournDirector':int(Aquadf['音響'].values*Nisu*zeiritu),
+        'SoundDirector':int(Aquadf['音響'].values*Nisu*zeiritu),
         'HP':int(Aquadf['ＨＰ予想記者'].values*Nisu*zeiritu),
         'Machine':int(Aquadf['配信機材一式'].values*Nisu*zeiritu),
         'Goods':int(Aquadf['備品等'].values*Nisu*zeiritu),
