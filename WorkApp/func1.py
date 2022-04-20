@@ -64,7 +64,7 @@ def print_database():
     df.sort_values('id',inplace=True)
     connection.commit()
     connection.close()
-    df['end_day2']=[Weekday(i) for i in df['end_day']]
+    df['end_day2']=[i for i in df['end_day']]
 
     return df
 
