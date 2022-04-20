@@ -1,5 +1,88 @@
 {% extends 'WorkApp/template.html' %}
 {% block body_content %}
-<p>graph2</p>
+<div>&nbsp;</div>
+<div>&nbsp;</div>
+<h2 style="font-family:sans-serif; font-size:20px;">令和４年度-項目別-収支一覧&nbsp;総事業費>>>{{ dict.kaisetsu1 }}</h2>
+<div>&nbsp;</div>
+<div style="width: 80%;">
+    <canvas id="mychart-bar"></canvas>
+  </div>
+<script>
+var ctx = document.getElementById('mychart-bar');
+var myChart = new Chart(ctx, {
+  type: 'bar',
+  data: {
+    
+    {% autoescape off %}
+    labels:{{ dict.monthlist }},
+    
+    datasets: [{
+      label: '請求合計額',
+      data: [{{ dict.four }},
+      {{ dict.five }},
+      {{ dict.six }},
+      {{ dict.seven }},
+      {{ dict.eight }},
+      {{ dict.nine }},
+      {{ dict.ten }},
+      {{ dict.eleven }},
+      {{ dict.twelve }},
+      {{ dict.one }},
+      {{ dict.two }},
+      {{ dict.three }}],
+      backgroundColor: 'mediumspringgreen',
+  }, 
+  {
+      label: '支払総額',
+      data: [{{ dict.four_2 }},
+      {{ dict.five_2 }},
+      {{ dict.six_2 }},
+      {{ dict.seven_2 }},
+      {{ dict.eight_2 }},
+      {{ dict.nine_2 }},
+      {{ dict.ten_2 }},
+      {{ dict.eleven_2 }},
+      {{ dict.twelve_2 }},
+      {{ dict.one_2 }},
+      {{ dict.two_2 }},
+      {{ dict.three_2 }}],
+      backgroundColor: '#FF9933',
+    },
+    {% endautoescape %}],
+  },
+  options: {
+        responsive:true,
+        scales: {         // 軸設定
+            xAxes: [           // Ｘ軸設定
+                {
+                    scaleLabel: {   // 軸ラベル
+                      fontColor :'cyan'
+                    },
+                    gridLines: {    // 目盛線
+                        color:'rgb(40,40,40)'
+                    },
+                    ticks: {        // 目盛り
+                        fontColor:'yellow',
+                        // fontSize:20
+                    },
+                }
+            ],
+            yAxes: [  
+                {
+                    scaleLabel: {   // 軸ラベル
+                        fontColor :'cyan'
+                    },
+                    gridLines: {    // 目盛線
+                        color:'rgb(40,40,40)'
+                    },
+                    ticks: {        // 目盛り
+                        fontColor:'yellow',
+                        // fontSize:24
+                    },
+                }         // Ｙ軸設定 
+            ]
+        }
+  }});    
+</script>
 
 {% endblock %}
