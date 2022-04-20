@@ -70,12 +70,13 @@ def print_database2():
     return df
 
 
-from datetime import datetime as dt
+#整理データベースメソッド→グラフ.htmlにデータを整理して送信するデーター加工
 def seiri_database():
     df = print_database()
     df['end_day'] = pd.to_datetime(df['end_day'],format='%Y-%m-%d')
     df2 = print_database2()
     df2['furikomi_day'] = pd.to_datetime(df2['furikomi_day'],format='%Y-%m-%d')
+    queryword="'2022-04-01'<end_day<'2023-03-31'"
     list = ['４月','５月','６月','７月','８月','９月','１０月','１１月','１２月','１月','２月','３月']
     dict={
     'four':df.loc[df['end_day'].dt.month==4]['price'].sum(),
@@ -103,7 +104,24 @@ def seiri_database():
     'one_2':df2.loc[df2['furikomi_day'].dt.month==1]['price'].sum(),
     'two_2':df2.loc[df2['furikomi_day'].dt.month==2]['price'].sum(),
     'three_2':df2.loc[df2['furikomi_day'].dt.month==3]['price'].sum(),
-    'total_1':df.query("'2021-01-01'<end_day<'2023-03-31'")['price'].sum(),
-    'total_2':df2.query("'2021-01-01'<furikomi_day<'2023-03-31'")['price'].sum(),
+    'total_1':df.query(queryword)['price'].sum(),
+    'total_2':df2.query(queryword)['price'].sum(),
 }
+    return dict
+
+
+#整理データベースメソッド→グラフ.htmlにデータを整理して送信するデーター加工
+def type_print():
+    Nisu=198
+    queryword="'2022-04-01'<end_day<'2023-03-31'"
+    zeiritu = 1.1
+    Aqua1=['解説者','解説','MC','ディレクター','スタッフ','映像','音響','ＨＰ予想記者','配信機材一式','備品等','実況放送']
+    Aqua2=[37000, 43000, 53000, 32000, 20000, 32000, 32000,	32000,	9700, 7000,	6500]
+    Aquadf = pd.DataFrame(Aqua2).T
+    Aquadf.columns=Aqua1
+    dict={
+        'kaisetsu1':Aquadf['解説者']*Nisu*zeiritu
+
+    }
+
     return dict
