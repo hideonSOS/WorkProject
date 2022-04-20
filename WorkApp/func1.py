@@ -85,7 +85,7 @@ def print_database2():
 #整理データベースメソッド→グラフ.htmlにデータを整理して送信するデーター加工
 def seiri_database():
     df = print_database()
-    df['end_day'] = [pd.to_datetime(df['end_day'],format='%Y-%m-%d')]
+    df['end_day'] = pd.to_datetime(df['end_day'],format='%Y-%m-%d')
     df2 = print_database2()
     df2['furikomi_day'] = pd.to_datetime(df2['furikomi_day'],format='%Y-%m-%d')
     queryword1="'2022-04-01'<end_day<'2023-03-31'"
