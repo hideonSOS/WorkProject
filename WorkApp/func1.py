@@ -58,6 +58,7 @@ def print_database():
     connection.commit()
     connection.close()
     df['end_day'] = pd.to_datetime(df['end_day'],format='%Y-%m-%d')
+    return df
 
 #r4_table_2（支払いデータベース接続）
 def print_database2(): 
