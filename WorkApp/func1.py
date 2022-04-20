@@ -73,7 +73,7 @@ def print_database2():
 
 def Weekday(no):
     from datetime import datetime
-    dt = datetime(int(no))
+    dt = no
     date = dt.weekday()
     return date
 #整理データベースメソッド→グラフ.htmlにデータを整理して送信するデーター加工
