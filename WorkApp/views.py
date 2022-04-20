@@ -50,9 +50,7 @@ def input(request):
         # delete_database(id)
         df = print_database()
         dict = df.to_dict('records')
-        if request.POST.get=='No2':
-            dict = "test"
-    
+        
     return render(request,'WorkApp/input.html',{'dict':dict})
 
 @login_required
