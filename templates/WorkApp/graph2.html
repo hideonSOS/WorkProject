@@ -2,7 +2,7 @@
 {% block body_content %}
 <div>&nbsp;</div>
 <div>&nbsp;</div>
-<h2 style="font-family:sans-serif; font-size:20px;">令和４年度-項目別-収支一覧&nbsp;総事業費>>>{{ dict.kaisetsu1 }}</h2>
+<h2 style="font-family:sans-serif; font-size:20px;">令和４年度-項目別-収支一覧</h2>
 <div>&nbsp;</div>
 <div style="width: 80%;">
     <canvas id="mychart-bar"></canvas>
@@ -14,23 +14,22 @@ var myChart = new Chart(ctx, {
   data: {
     
     {% autoescape off %}
-    labels:{{ dict.monthlist }},
+    labels:[1,2,3,4,5,6,7,8,9,10,11],
     
     datasets: [{
-      label: '請求合計額',
-      data: [{{ dict.four }},
-      {{ dict.five }},
-      {{ dict.six }},
-      {{ dict.seven }},
-      {{ dict.eight }},
-      {{ dict.nine }},
-      {{ dict.ten }},
-      {{ dict.eleven }},
-      {{ dict.twelve }},
-      {{ dict.one }},
-      {{ dict.two }},
-      {{ dict.three }}],
-      backgroundColor: 'mediumspringgreen',
+        label: '請求合計額',
+        data: [{{ dict.kaisetsu1 }},
+        {{ dict.kaisetsu2 }},
+        {{ dict.MC }},
+        {{ dict.Director }},
+        {{ dict.Staff }},
+        {{ dict.Visiondirector }},
+        {{ dict.SoundDirector }},
+        {{ dict.HP }},
+        {{dict.Machine }},
+        {{ dict.Goods }},
+        {{ dict.Jikyo }},],
+    backgroundColor: 'mediumspringgreen',
   }, 
   {
       label: '支払総額',
@@ -45,7 +44,7 @@ var myChart = new Chart(ctx, {
       {{ dict.twelve_2 }},
       {{ dict.one_2 }},
       {{ dict.two_2 }},
-      {{ dict.three_2 }}],
+    
       backgroundColor: '#FF9933',
     },
     {% endautoescape %}],
