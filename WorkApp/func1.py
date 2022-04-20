@@ -32,7 +32,7 @@ def input_database(id,series,syusai,start_day,end_day,price):
 def input_database2(id,title,furikomi,furikomi_day,price,memo): 
     connection = psycopg2.connect(**connection_config) 
     cursor=connection.cursor() 
-    SQL = f"INSERT INTO r4table_2 VALUES({id}, '{title}', '{furikomi}', '{furikomi_day}', {price},'{memo}')" 
+    SQL = f"INSERT INTO r4table_2 VALUES({id}, '{title}', '{furikomi}', '{furikomi_day}', {price},'{type}','{memo}')" 
     cursor.execute(SQL) 
     connection.commit()
     # df = pd.read_sql(sql='SELECT * FROM r4table;',con=connection) 
