@@ -51,7 +51,7 @@ def delete_database(id):
 def Weekday(day):
     from datetime import datetime
     dt = datetime(day)
-    ind = dt.weekday()
+    ind = int(dt.weekday())
     w_list = ['(月)', '(火)', '(水)', '(木)', '(金)', '(土)', '(日)']
     data = w_list[ind]
     return data
