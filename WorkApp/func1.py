@@ -120,7 +120,8 @@ def type_print():
     Aquadf = pd.DataFrame(Aqua2).T
     Aquadf.columns=Aqua1
     dict={
-        'kaisetsu1':Aquadf['解説者']*Nisu*zeiritu
+        # 'kaisetsu1':Aquadf['解説者']*Nisu*zeiritu
+        'kaisetsu1':'testvalue'
 
     }
 
