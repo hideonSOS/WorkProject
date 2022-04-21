@@ -1,7 +1,15 @@
 {% extends 'WorkApp/template.html' %}
+{% load static %}
+{% block header %}
+    <link rel="stylesheet" href="{% static 'WorkApp/style2.css' %}">
+{% endblock %}
 {% block body_content %}
     <p></p>
-    <div class="maintext">ここに文章が入ります。</div>
-    <p></p>
+    <div class="waku"></div>
+    <div class="test" id="test">
+        <p>メディア事業部・業務アプリへようこそ</p>
+
+    </div>
     
+    <script src="{% static 'WorkApp/script2.js' %}"></script>
 {% endblock %}

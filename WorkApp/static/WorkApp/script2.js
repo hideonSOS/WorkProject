@@ -26,3 +26,18 @@ var bar = new ProgressBar.Line(splash_text, {//id名を指定
   bar.animate(1.0, function () {//バーを描画する割合を指定します 1.0 なら100%まで描画します
     $("#splash").delay(500).fadeOut(800);//アニメーションが終わったら#splashエリアをフェードアウト
   });  
+
+var stroke;
+stroke = new Vivus('mask',{
+  start:'manual',
+  type:'scenario-sync',
+  duration:50,
+  forceRender:false,
+  animTimingFunctrion:Vivus.EASE,
+}
+);
+$(window).on('load',function(){
+  $("#splash").delay(1500).fadeOut('slow');
+  $("#splash_logo").delay(1500).fadeOut('slow');
+  stroke.play();
+});
