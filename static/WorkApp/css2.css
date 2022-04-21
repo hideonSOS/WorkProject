@@ -1,0 +1,32 @@
+body {
+  background: #2e3441;
+  background-image: radial-gradient(top, circle cover, #4e7a89, #2e3441 80%);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.signin {
+  display: block;
+  position: relative;
+  width: 340px;
+  margin: 20px auto;
+  padding: profile_padding;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.signin .avatar {
+  width: avatar_size;
+  height: avatar_size;
+  margin: 70% auto 0px auto;
+  border: 5px solid #fff;
+}
+
+/* .signin:before {
+  text-align: center;
+  font-family: Ionicons;
+  display: block;
+  height: 100%;
+  line-height: avatar_size;
+  font-size: 5em;
+} */
+/*# sourceMappingURL=css2.css.map */
