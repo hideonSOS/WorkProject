@@ -6,8 +6,6 @@ body {
 }
 
 .signin {
-  avatar_size: 100px;
-  profile_padding: 20px;
   display: block;
   position: relative;
   width: 340px;
@@ -19,12 +17,11 @@ body {
 .signin .avatar {
   width: avatar_size;
   height: avatar_size;
-  margin: 0 auto 35px auto;
+  margin: 70% auto 0px auto;
   border: 5px solid #fff;
 }
 
 .signin:before {
-  content: "\f272";
   text-align: center;
   font-family: Ionicons;
   display: block;
