@@ -1,0 +1,23 @@
+.waku{
+    height:50px;
+    
+}
+.test{
+    // background-color: darkgray;
+    font-size:50px;
+    font-family:sans-serif;
+    text-align: center;
+    animation: original_func1;
+    animation-duration: 10s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+
+@keyframes original_func1{
+    0%{
+        opacity:0;
+    }
+    100%{
+        opacity:1;
+    }
+}
