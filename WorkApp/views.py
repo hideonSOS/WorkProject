@@ -95,12 +95,6 @@ class Login(LoginView):
     template_name = 'WorkApp/login.html'
 
 @login_required
-def delete(request):
-    df = print_database()
-    dict = df.to_dict('records')
-    id = request.POST.get('id')
-    if request.method=='POST':
-        delete_database(id)
-        df = print_database()
-        dict = df.to_dict('records')
-    return render(request, 'WorkApp/delete.html',{'dict':dict})
+def mail(request):
+    
+    return render(request, 'WorkApp/mail.html')
