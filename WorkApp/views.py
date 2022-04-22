@@ -94,7 +94,16 @@ class Login(LoginView):
     form_class=LoginForm
     template_name = 'WorkApp/login.html'
 
+from . import mail
+
 @login_required
-def mail(request):
-    
+def mailon(request):
+    subjecton=request.POST.get('texteria1')
+    messageon=request.POST.get('texteria2')
+    pathlist=request.POST.get('fileon')
+    if request.method=="POST": 
+        path = r'C://Users/matsuyama/Desktop/3.jpg'
+        mail.send_mail(subjecton,messageon,pathlist)
+    else:
+        print('error')
     return render(request, 'WorkApp/mail.html')

@@ -12,6 +12,6 @@ urlpatterns=[
     path('input2/', views.input2, name='input2'),
     path('output/', views.output, name='output'),
     path('logout/', views.Logout.as_view(), name = 'logout'),
-    path('mail/' ,views.mail,name='mail'),
+    path('mail/' ,views.mailon,name='mail'),
     path('login/', views.Login.as_view(), name='login'),
 ]

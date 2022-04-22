@@ -1,18 +1,22 @@
 {% extends 'WorkApp/template.html' %}
+{% load static %}
+{% block header %}
+  {% static 'WorkApp/style3.css' %}
+{% endblock %}
 {% block body_content %}
 
-<div style="margin-top: 20px;">
-    <h2>メール画面</h2>
-  </div>
+<div class="toperia"></div>
   <form method="POST" class="register-form ">{% csrf_token %}
+    <div style="margin-top:30px;"><input name="texteria1" type="text"></input></div>
+    <div style="margin-top:30px;"><input name="texteria2" type="text"></input></div>
     <div class="row" style="margin-top:30px;">
       <div class="range col-lg-6">
-        <input type="text" name="id">
+        <input name="fileon" multiple="multiple" type="file" src='C:\\' style="font-size:14px;" class="btn btn-warning">
       </div>
     </div>
   
   <!-- 送信（保存）ボタン-->
-    <button type="submit" class="save btn btn-danger" style="margin-top: 30px;">削除</button>
+    <button type="submit" class="save btn btn-danger" style="margin-top: 30px;">送信</button>
   </form>
 
 {% endblock %}
