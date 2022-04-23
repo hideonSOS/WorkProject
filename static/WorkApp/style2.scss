@@ -1,10 +1,10 @@
 .waku{
     height:50px;
-    
 }
-.test{
+
+.oneline{
     color:white;
-    font-size:50px;
+    font-size:30px;
     font-family:sans-serif;
     text-align: center;
     animation: original_func1;
@@ -20,4 +20,79 @@
     100%{
         opacity:1;
     }
+}
+.twoline{
+    color:white;
+    font-size:26px;
+    font-family:sans-serif;
+    text-align: center;
+    animation: original_func1;
+    animation-duration: 6s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+
+@keyframes original_func1{
+    0%{
+        opacity:0;
+    }
+    100%{
+        opacity:1;
+    }
+}
+
+.threeline{
+    color:white;
+    font-size:22px;
+    font-family:sans-serif;
+    text-align: center;
+    animation: original_func1;
+    animation-duration: 9s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+
+@keyframes original_func1{
+    0%{
+        opacity:0;
+    }
+    100%{
+        opacity:1;
+    }
+}
+
+
+
+
+.effect span:nth-child(1){
+    background-color: aqua;
+    width:50px;
+    height:1px;
+    top: 20px;
+    margin-bottom:1px;
+    left:50%;
+    display:block;
+    position: relative;
+}
+
+.effect span:nth-child(2){
+    background-color: aqua;
+    width:50px;
+    height:1px;
+    top: 25px;
+    margin-bottom:1px;
+    left:50%;
+    display:block;
+    position: relative;
+}
+
+.effect span:nth-child(3){
+    background-color: aqua;
+    width:50px;
+    height:1px;
+    top: 30px;
+    margin-bottom:1px;
+    left:50%;
+    display:block;
+    position: relative;
 }
