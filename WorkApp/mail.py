@@ -7,15 +7,15 @@ from os.path import basename
 import os
 
 
-# 送受信先
-to_email = "code1555@icloud.com"
 
+to_email = "code1555@icloud.com"
+# SMTP認証情報
+account = "yamato.media.robots@gmail.com"
+password = "yamato2020"
 
 
 def send_mail(subjecton,messageon,path):
-	# SMTP認証情報
-	account = "yamato.media.robots@gmail.com"
-	password = "yamato2020"
+
 	msg = MIMEMultipart()
 	msg["Subject"] = subjecton
 	msg["To"] = to_email
@@ -23,10 +23,17 @@ def send_mail(subjecton,messageon,path):
 	msg.attach(MIMEText(messageon))
 
 	for i in path:
-		with open(i , "rb") as f:
-			part = MIMEApplication(f.read(),Name=basename(i))
-			part['Content-Disposition'] = 'attachment; filename="%s"' % basename(i)
+		f= open(i.name,'wb+')
+		for chunk in i.chunks():
+			f.write(chunk)
+			part = MIMEApplication(f.read())
 			msg.attach(part)
+			f.close
+
+	# for i in path:
+	# 	with open(i , "rb") as f:
+	# 		part = MIMEApplication(f.read())
+	# 		msg.attach(part)
 	# メール送信処理
 	server = smtplib.SMTP("smtp.gmail.com", 587)
 	server.starttls()

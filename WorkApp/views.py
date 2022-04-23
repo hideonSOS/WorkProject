@@ -100,15 +100,11 @@ from . import mail
 def mailon(request):
     subjecton=request.POST.get('texteria1')
     messageon=request.POST.get('texteria2')
-    pathlist=request.POST.get('fileon')
+    # pathlist=request.POST.get('fileon')
     if request.method=="POST": 
-        testlist = []
-        for i in request.FILES.getlist('fileon'):
-            testlist.append(i)
-        #     print(f'ファイル受け取りのfor文の中身 >>> {i}')
-        # print(f'testlistの中身 >>> {testlist}',f'testlistの型 >>> {type(testlist)}')
+        testlist = request.FILES.getlist('fileon')
         # for i in testlist:
-        #     print(f'testlist for の中身>>> {i}')
-        # mail.send_mail(subjecton,messageon,testlist)
-
+        #     print(i.name)
+        mail.send_mail(subjecton,messageon,testlist)
+        
     return render(request, 'WorkApp/mail.html')
