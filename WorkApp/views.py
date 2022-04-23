@@ -102,8 +102,13 @@ def mailon(request):
     messageon=request.POST.get('texteria2')
     pathlist=request.POST.get('fileon')
     if request.method=="POST": 
-        path = r'C://Users/matsuyama/Desktop/3.jpg'
-        mail.send_mail(subjecton,messageon,pathlist)
-    else:
-        print('error')
+        testlist = []
+        for i in request.FILES.getlist('fileon'):
+            testlist.append(i)
+        #     print(f'ファイル受け取りのfor文の中身 >>> {i}')
+        # print(f'testlistの中身 >>> {testlist}',f'testlistの型 >>> {type(testlist)}')
+        # for i in testlist:
+        #     print(f'testlist for の中身>>> {i}')
+        # mail.send_mail(subjecton,messageon,testlist)
+
     return render(request, 'WorkApp/mail.html')

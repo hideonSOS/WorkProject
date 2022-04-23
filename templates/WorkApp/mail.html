@@ -6,12 +6,12 @@
 {% block body_content %}
 
 <div class="toperia"></div>
-  <form method="POST" class="register-form ">{% csrf_token %}
+  <form method="POST" class="register-form" enctype="multipart/form-data">{% csrf_token %}
     <div style="margin-top:30px;"><input name="texteria1" type="text"></input></div>
     <div style="margin-top:30px;"><input name="texteria2" type="text"></input></div>
     <div class="row" style="margin-top:30px;">
       <div class="range col-lg-6">
-        <input name="fileon" multiple="multiple" type="file" src='C:\\' style="font-size:14px;" class="btn btn-warning">
+        <input name="fileon" multiple="multiple" type="file" style="font-size:14px;" class="btn btn-warning">
       </div>
     </div>
   

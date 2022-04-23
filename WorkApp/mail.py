@@ -22,11 +22,11 @@ def send_mail(subjecton,messageon,path):
 	msg["From"] = "yamato.media.robots@gmail.com"
 	msg.attach(MIMEText(messageon))
 
-	
-	with open(path , "rb") as f:
-		part = MIMEApplication(f.read(),Name=basename(path))
-		part['Content-Disposition'] = 'attachment; filename="%s"' % basename(path)
-		msg.attach(part)
+	for i in path:
+		with open(i , "rb") as f:
+			part = MIMEApplication(f.read(),Name=basename(i))
+			part['Content-Disposition'] = 'attachment; filename="%s"' % basename(i)
+			msg.attach(part)
 	# メール送信処理
 	server = smtplib.SMTP("smtp.gmail.com", 587)
 	server.starttls()
