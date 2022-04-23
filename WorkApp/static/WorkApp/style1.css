@@ -60,7 +60,7 @@ nav > .menu > .login {
     width: 130px;
     height: 100%;
     padding-top: 50px;
-    background: red;
+    background: rgba(255, 0, 0, 0.5);
     font-size: 20px;
     box-sizing: border-box;
     text-align: left;
