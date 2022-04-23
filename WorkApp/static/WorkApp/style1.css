@@ -21,6 +21,10 @@ nav > .menu > .login {
   top: 4px;
 }
 
+.card:hover {
+  transform: translate(2.5, 2.5);
+}
+
 .canvas {
   position: relative;
   width: calc(100%-40px);
