@@ -6,7 +6,13 @@ import smtplib
 from os.path import basename
 import os
 
-
+#^^^^^^^^^^^^^^^^^^^^^
+EMAIL_HOST="smtp.gmail.com"
+EMAIL_HOST_USER="yamato.media.robots@gmail.com"
+EMAIL_HOST_PASSWORD="dwabvwpqknziiauh"
+EMAIL_PORT=587
+EMAIL_USE_TLS=True
+#^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 to_email = "code1555@icloud.com"
 # SMTP認証情報
@@ -31,6 +37,6 @@ def send_mail(subjecton,messageon,path):
 
 	server = smtplib.SMTP("smtp.gmail.com", 587)
 	server.starttls()
-	server.login(account, password)
+	server.login(account, EMAIL_HOST_PASSWORD)
 	server.send_message(msg)
 	server.quit()
