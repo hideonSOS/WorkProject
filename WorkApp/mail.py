@@ -15,11 +15,10 @@ password = "yamato2020"
 
 
 def send_mail(subjecton,messageon,path):
-
 	msg = MIMEMultipart()
 	msg["Subject"] = subjecton
 	msg["To"] = to_email
-	msg["From"] = "yamato.media.robots@gmail.com"
+	msg["From"] = account
 	msg.attach(MIMEText(messageon))
 
 	for i in path:
@@ -30,11 +29,6 @@ def send_mail(subjecton,messageon,path):
 			msg.attach(part)
 			f.close
 
-	# for i in path:
-	# 	with open(i , "rb") as f:
-	# 		part = MIMEApplication(f.read())
-	# 		msg.attach(part)
-	# メール送信処理
 	server = smtplib.SMTP("smtp.gmail.com", 587)
 	server.starttls()
 	server.login(account, password)
