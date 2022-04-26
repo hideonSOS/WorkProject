@@ -20,7 +20,7 @@ account = "yamato.media.robots@gmail.com"
 password = "yamato2020"
 
 
-def send_mail(subjecton,messageon,path,to_email):
+def send_image(subjecton,messageon,path,to_email):
 	msg = MIMEMultipart()
 	msg["Subject"] = subjecton
 	msg["To"] = to_email
@@ -33,6 +33,36 @@ def send_mail(subjecton,messageon,path,to_email):
 		for chunk in i.chunks():
 			f.write(chunk)
 		f.close
+		#--------------------------------------------
+		f=open(i.name, 'rb')
+		img = f.read()
+		image = MIMEImage(img, name=i.name,_subtype='octet-stream')
+		
+		# image=MIMEText(img)
+		msg.attach(image)
+		f.close
+		
+
+	server = smtplib.SMTP("smtp.gmail.com", 587)
+	server.starttls()
+	server.login(account, EMAIL_HOST_PASSWORD)
+	server.send_message(msg)
+	server.quit()
+
+import PyPDF2
+def send_pdf(subjecton,messageon,path,to_email):
+	msg=MIMEMultipart()
+	msg['Subject']=subjecton
+	msg["To"] = to_email
+	msg["From"] = account
+	msg.attach(MIMEText(messageon))
+	
+	for i in path:
+		pdf=PyPDF2.PdfFileMerger()
+		for i in path:
+			pdf.append(i)
+		pdf.write(str(i.name))
+		pdf.close
 		#--------------------------------------------
 		f=open(i.name, 'rb')
 		img = f.read()

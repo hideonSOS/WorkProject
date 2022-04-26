@@ -115,7 +115,7 @@ nav > .menu > .login {
     top: 20px;
   }
   #wrapper .btn-gnavi.open {
-    transform: rotate(180deg);
+    transform: rotate(90deg);
   }
   #wrapper .btn-gnavi.open span {
     background: #fff;

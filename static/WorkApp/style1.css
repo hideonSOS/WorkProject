@@ -21,6 +21,18 @@ nav > .menu > .login {
   top: 4px;
 }
 
+.card {
+  border-radius: 15px;
+  background-color: #969696;
+  margin: 10px;
+  width: 240px;
+}
+
+.contaner.row .btn-light:hover {
+  transform: translate(10, 10);
+  position: fixed;
+}
+
 .canvas {
   position: relative;
   width: calc(100%-40px);
