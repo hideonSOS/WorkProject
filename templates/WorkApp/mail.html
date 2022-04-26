@@ -11,12 +11,24 @@
     <div style="margin-top:30px;"><input name="texteria2" type="text"></input></div>
     <div class="row" style="margin-top:30px;">
       <div class="range col-lg-6">
-        <input name="fileon" multiple="multiple" type="file" style="font-size:14px;" class="btn btn-warning">
+        <input name="fileon" multiple="multiple" onchange="previewFile(this);" type="file" style="font-size:14px;" class="btn btn-warning">
       </div>
     </div>
   
   <!-- 送信（保存）ボタン-->
     <button type="submit" class="save btn btn-danger" style="margin-top: 30px;">送信</button>
   </form>
-
+  <div>
+    <p></p>
+    <img id="preview" style="width:300px;">
+  </div>
+  <script>
+    function previewFile(hoge){
+      var fileData = new FileReader();
+      fileData.onload = (function() {
+        document.getElementById('preview').src = fileData.result;
+      });
+      fileData.readAsDataURL(hoge.files[0]);
+    }
+    </script>
 {% endblock %}

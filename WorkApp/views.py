@@ -102,9 +102,8 @@ def mailon(request):
     messageon=request.POST.get('texteria2')
     # pathlist=request.POST.get('fileon')
     if request.method=="POST": 
+        to_email = "hideo.code1555@gmail.com"
         testlist = request.FILES.getlist('fileon')
-        # for i in testlist:
-        #     print(i.name)
-        mail.send_mail(subjecton,messageon,testlist)
+        mail.send_mail(subjecton,messageon,testlist,to_email)
         
     return render(request, 'WorkApp/mail.html')
