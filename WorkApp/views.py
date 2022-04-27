@@ -94,16 +94,35 @@ class Login(LoginView):
     form_class=LoginForm
     template_name = 'WorkApp/login.html'
 
-from . import mail
+
 
 @login_required
 def mailon(request):
+    from . import mail,mail_body
+    #送信先１
+    to_email1 = "hideo.code1555@gmail.com"
+    #送信先２
+    to_email2 = "code1555@icloud.com"
+
     subjecton=request.POST.get('texteria1')
-    messageon=request.POST.get('texteria2')
+    # messageon=request.POST.get('texteria2')
     # pathlist=request.POST.get('fileon')
-    if request.method=="POST": 
-        to_email = "hideo.code1555@gmail.com"
-        testlist = request.FILES.getlist('fileon')
-        mail.send_pdf(subjecton,messageon,testlist,to_email)
-        
+    #もしラジオボタンでアンドアイが選択されていたら
+    if request.method=="POST" and request.POST.get('select')=='andai':
+        if 'select1' in request.POST:
+            testlist = request.FILES.getlist('fileon')
+            messageon=mail_body.andai_send()
+            mail.send_pdf(subjecton,messageon,testlist,to_email1)
+            print('test_send')
+        elif 'select2' in request.POST:      
+            testlist = request.FILES.getlist('fileon')
+            messageon=mail_body.andai_send()
+            mail.send_pdf(subjecton,messageon,testlist,to_email1)
+            mail.send_pdf(subjecton,messageon,testlist,to_email2)
+            print('test_send')
+    else:
+        print('else')
+        # testlist = request.FILES.getlist('fileon')
+        # messageon=mail_body.andai_send()
+        # mail.send_image(subjecton,messageon,testlist,to_email1)
     return render(request, 'WorkApp/mail.html')

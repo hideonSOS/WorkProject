@@ -6,9 +6,16 @@
 {% block body_content %}
 
 <div class="toperia"></div>
+<div class="effect"><span></span><span></span><span></span></div>
+  
+<div class="middleeria"></div>
+<p>送信内容を設定してください。</p>
+
   <form method="POST" class="register-form" enctype="multipart/form-data">{% csrf_token %}
-    <div style="margin-top:30px;"><input name="texteria1" type="text"></input></div>
-    <div style="margin-top:30px;"><input name="texteria2" type="text"></input></div>
+    <div style="margin-top:30px;">
+      <input type="radio" name="select" value="andai" checked="checked" />アンドアイスケジュール（PDF）
+      <input type="radio" name="select" value="選択２" checked="checked" />画像（開発中）
+    </div>
     <div class="row" style="margin-top:30px;">
       <div class="range col-lg-6">
         <input name="fileon" multiple="multiple" onchange="previewFile(this);" type="file" style="font-size:14px;" class="btn btn-warning">
@@ -16,7 +23,10 @@
     </div>
   
   <!-- 送信（保存）ボタン-->
-    <button type="submit" class="save btn btn-danger" style="margin-top: 30px;">送信</button>
+    <div class="btn_bunki">
+      <button type="submit" name="select1" class="save btn btn-primary" style="margin-top: 30px;">テスト</button>
+      <button type="submit" name="select2" class="save btn btn-danger" style="margin-top: 30px;">送信</button>
+    </div>
   </form>
   <div>
     <p></p>
