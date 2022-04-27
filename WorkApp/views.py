@@ -103,6 +103,8 @@ def mailon(request):
     to_email1 = "hideo.code1555@gmail.com"
     #送信先２
     to_email2 = "code1555@icloud.com"
+    to_email3 = "a-hoshino@and-ai.jp"
+    to_email4 = "and-ai@nifty.com"
 
     subjecton=request.POST.get('texteria1')
     # messageon=request.POST.get('texteria2')
@@ -117,8 +119,8 @@ def mailon(request):
         elif 'select2' in request.POST:      
             testlist = request.FILES.getlist('fileon')
             messageon=mail_body.andai_send()
-            mail.send_pdf(subjecton,messageon,testlist,to_email1)
-            mail.send_pdf(subjecton,messageon,testlist,to_email2)
+            mail.send_pdf(subjecton,messageon,testlist,to_email3)
+            mail.send_pdf(subjecton,messageon,testlist,to_email4)
             print('test_send')
     else:
         print('else')
