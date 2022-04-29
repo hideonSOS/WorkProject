@@ -14,7 +14,7 @@ def home(request):
 @login_required
 def page1(request):
     df = func1.seiri_database2()
-    df['furikomi_day']=df['furikomi_day'].astype(date)
+    df['furikomi_day']=df['furikomi_day'].astype(datetime64)
     import pandas as pd
     import numpy as np
     # df = pd.read_excel('WorkApp\static\WorkApp\database_excel.xlsx',index_col=0)
