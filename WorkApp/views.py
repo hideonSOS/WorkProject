@@ -12,10 +12,10 @@ def home(request):
 
 @login_required
 def page1(request):
-    # df = func1.seiri_database2()
+    df = func1.seiri_database2()
     import pandas as pd
     import numpy as np
-    df = pd.read_excel('WorkApp\static\WorkApp\database_excel.xlsx',index_col=0)
+    # df = pd.read_excel('WorkApp\static\WorkApp\database_excel.xlsx',index_col=0)
     dict={
         'one':df.to_dict(orient='records'),
         'two':np.unique(df['furikomi']),
