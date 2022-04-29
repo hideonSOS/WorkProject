@@ -165,4 +165,8 @@ def type_print():
     return dict
 
 
-
+#時系列順にソート
+def seiri_database2():
+    df = print_database2()
+    print(df)
+    return df

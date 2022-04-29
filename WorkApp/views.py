@@ -3,6 +3,7 @@ from .forms import InputForm, LoginForm
 from .models import Series, test_database1
 from django.contrib.auth.views import LoginView,LogoutView
 from .func1 import delete_database, input_database,input_database2, print_database,print_database2, seiri_database, type_print
+from . import func1
 from django.contrib.auth.decorators import login_required
 
 @login_required
@@ -11,8 +12,61 @@ def home(request):
 
 @login_required
 def page1(request):
-    return render(request, 'WorkApp/page1.html')
+    # df = func1.seiri_database2()
+    import pandas as pd
+    import numpy as np
+    df = pd.read_excel('WorkApp\static\WorkApp\database_excel.xlsx',index_col=0)
+    dict={
+        'one':df.to_dict(orient='records'),
+        'two':np.unique(df['furikomi']),
+        'three':np.unique(df['type']),
+        'four':df.to_dict(orient='records'),
+    }
 
+    if request.method=='POST':
+        #1つ目のボタンを押したら
+        if 'day' in request.POST:
+            start_day = request.POST.get('start_day')
+            end_day = request.POST.get('end_day')
+            df1=df[(df['furikomi_day']>=start_day)&(df['furikomi_day']<=end_day)]
+            dicton = {
+                'one':df.to_dict(orient='records'),
+                'two':np.unique(df['furikomi']),
+                'three':np.unique(df['type']),
+                'four':df1.to_dict(orient='records'),
+                'five':f'{start_day} >>> {end_day} 期間での抽出結果'
+            }
+
+            return render(request, 'WorkApp/page1.html',{'html_dict':dicton})
+
+        elif 'list1' in request.POST:
+            list1_value = request.POST.get('liston1')
+            df1 = df[df['furikomi']==list1_value]
+            dicton1 = {
+                'one':df.to_dict(orient='records'),
+                'two':np.unique(df['furikomi']),
+                'three':np.unique(df['type']),
+                'four':df1.to_dict(orient='records'),
+                'five':f'{list1_value} での抽出結果'
+            }
+        
+            return render(request, 'WorkApp/page1.html',{'html_dict':dicton1})
+            
+        elif 'list2' in request.POST:
+            list2_value=request.POST.get('liston2')
+            df1 = df[df['type']==list2_value]
+            dicton2={
+                'one':df.to_dict(orient='records'),
+                'two':np.unique(df['furikomi']),
+                'three':np.unique(df['type']),
+                'four':df1.to_dict(orient='records'),
+                'five':f'{list2_value} での抽出結果'
+            }
+            
+            return render(request, 'WorkApp/page1.html',{'html_dict':dicton2})
+
+    return render(request, 'WorkApp/page1.html',{'html_dict':dict})
+    
 @login_required
 def graph1(request):
     dicton = seiri_database()

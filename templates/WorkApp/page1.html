@@ -1,6 +1,62 @@
 {% extends 'WorkApp/template.html' %}
-
+{% load static %}
+{% block header %}
+    <link rel="stylesheet" href="{% static 'WorkApp/page1.css' %}">
+{% endblock %}
 {% block body_content %}
-    <p></p>
-    <div class="page1_body">ここはページ１です。</div>
+<div class="anounce">〇&nbsp;時系列抽出</div>
+<div class="form_eria">
+    <form action="" method="POST">{% csrf_token %}
+        <input type="date" name="start_day">
+        <input type="date" name="end_day">
+        <button type="submit" name="day">表示</button>
+    </form>
+</div>
+<div class="anounce">〇&nbsp;項目別抽出・支払先</div>
+<div class="form_eria">
+    <form action="" method="POST">{% csrf_token %}
+        <input type="list" list="CL1" name="liston1">
+        <datalist id="CL1">
+            {% for i in html_dict.two %}
+                <option value="{{ i }}">
+            {% endfor %}
+        </datalist>
+        <button type="submit" name="list1">表示</button>
+    </form>
+</div>
+<div class="anounce">〇&nbsp;項目別抽出・種別</div>
+<div class="form_eria">
+    <form action="" method="POST">{% csrf_token %}
+        <input type="list" list="CL2" name="liston2">
+        <datalist id="CL2">
+            {% for i in html_dict.three %}
+                <option value="{{ i }}">
+            {% endfor %}
+        </datalist>
+        <button type="submit" name="list2">表示</button>
+    </form>
+</div>
+    <div>&nbsp;</div>
+
+
+<div class="caption">{{ html_dict.five }}</div>
+<table class='tb'>
+    <th>ID</th><th>開催タイトル</th><th>支払先</th><th>支払日</th><th>支払額</th><th>種別</th><th>備考</th>
+    {% for i in html_dict.four %}
+    
+    <tr>
+        <td>{{ i.id }}</td>
+        <td>{{ i.title }}</td>
+        <td>{{ i.furikomi }}</td>
+        <td>{{ i.furikomi_day }}</td>
+        <td>{{ i.price }}</td>
+        <td>{{ i.type }}</td>
+        <td>{{ i.memo }}</td>
+    </tr>
+    
+    {% endfor %}
+
+</table>
+
+<div>&nbsp;</div>
 {% endblock %}
